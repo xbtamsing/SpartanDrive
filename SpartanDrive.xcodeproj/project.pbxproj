@@ -1,0 +1,595 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		091A26AB2405E36100D0F848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AA2405E36100D0F848 /* AppDelegate.swift */; };
+		091A26AD2405E36100D0F848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AC2405E36100D0F848 /* SceneDelegate.swift */; };
+		091A26AF2405E36100D0F848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AE2405E36100D0F848 /* ViewController.swift */; };
+		091A26B22405E36100D0F848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B02405E36100D0F848 /* Main.storyboard */; };
+		091A26B42405E36300D0F848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B32405E36300D0F848 /* Assets.xcassets */; };
+		091A26B72405E36300D0F848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B52405E36300D0F848 /* LaunchScreen.storyboard */; };
+		091A26C22405E36300D0F848 /* SpartanDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26C12405E36300D0F848 /* SpartanDriveTests.swift */; };
+		091A26CD2405E36300D0F848 /* SpartanDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26CC2405E36300D0F848 /* SpartanDriveUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		091A26BE2405E36300D0F848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 091A269F2405E36100D0F848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 091A26A62405E36100D0F848;
+			remoteInfo = SpartanDrive;
+		};
+		091A26C92405E36300D0F848 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 091A269F2405E36100D0F848 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 091A26A62405E36100D0F848;
+			remoteInfo = SpartanDrive;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		091A26A72405E36100D0F848 /* SpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		091A26AA2405E36100D0F848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		091A26AC2405E36100D0F848 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		091A26AE2405E36100D0F848 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		091A26B12405E36100D0F848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		091A26B32405E36300D0F848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		091A26B62405E36300D0F848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		091A26B82405E36300D0F848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091A26BD2405E36300D0F848 /* SpartanDriveTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanDriveTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		091A26C12405E36300D0F848 /* SpartanDriveTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanDriveTests.swift; sourceTree = "<group>"; };
+		091A26C32405E36300D0F848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091A26C82405E36300D0F848 /* SpartanDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		091A26CC2405E36300D0F848 /* SpartanDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanDriveUITests.swift; sourceTree = "<group>"; };
+		091A26CE2405E36300D0F848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		091A26A42405E36100D0F848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091A26BA2405E36300D0F848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091A26C52405E36300D0F848 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		091A269E2405E36100D0F848 = {
+			isa = PBXGroup;
+			children = (
+				091A26A92405E36100D0F848 /* SpartanDrive */,
+				091A26C02405E36300D0F848 /* SpartanDriveTests */,
+				091A26CB2405E36300D0F848 /* SpartanDriveUITests */,
+				091A26A82405E36100D0F848 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		091A26A82405E36100D0F848 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				091A26A72405E36100D0F848 /* SpartanDrive.app */,
+				091A26BD2405E36300D0F848 /* SpartanDriveTests.xctest */,
+				091A26C82405E36300D0F848 /* SpartanDriveUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		091A26A92405E36100D0F848 /* SpartanDrive */ = {
+			isa = PBXGroup;
+			children = (
+				091A26AA2405E36100D0F848 /* AppDelegate.swift */,
+				091A26AC2405E36100D0F848 /* SceneDelegate.swift */,
+				091A26AE2405E36100D0F848 /* ViewController.swift */,
+				091A26B02405E36100D0F848 /* Main.storyboard */,
+				091A26B32405E36300D0F848 /* Assets.xcassets */,
+				091A26B52405E36300D0F848 /* LaunchScreen.storyboard */,
+				091A26B82405E36300D0F848 /* Info.plist */,
+			);
+			path = SpartanDrive;
+			sourceTree = "<group>";
+		};
+		091A26C02405E36300D0F848 /* SpartanDriveTests */ = {
+			isa = PBXGroup;
+			children = (
+				091A26C12405E36300D0F848 /* SpartanDriveTests.swift */,
+				091A26C32405E36300D0F848 /* Info.plist */,
+			);
+			path = SpartanDriveTests;
+			sourceTree = "<group>";
+		};
+		091A26CB2405E36300D0F848 /* SpartanDriveUITests */ = {
+			isa = PBXGroup;
+			children = (
+				091A26CC2405E36300D0F848 /* SpartanDriveUITests.swift */,
+				091A26CE2405E36300D0F848 /* Info.plist */,
+			);
+			path = SpartanDriveUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		091A26A62405E36100D0F848 /* SpartanDrive */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091A26D12405E36300D0F848 /* Build configuration list for PBXNativeTarget "SpartanDrive" */;
+			buildPhases = (
+				091A26A32405E36100D0F848 /* Sources */,
+				091A26A42405E36100D0F848 /* Frameworks */,
+				091A26A52405E36100D0F848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SpartanDrive;
+			productName = SpartanDrive;
+			productReference = 091A26A72405E36100D0F848 /* SpartanDrive.app */;
+			productType = "com.apple.product-type.application";
+		};
+		091A26BC2405E36300D0F848 /* SpartanDriveTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091A26D42405E36300D0F848 /* Build configuration list for PBXNativeTarget "SpartanDriveTests" */;
+			buildPhases = (
+				091A26B92405E36300D0F848 /* Sources */,
+				091A26BA2405E36300D0F848 /* Frameworks */,
+				091A26BB2405E36300D0F848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				091A26BF2405E36300D0F848 /* PBXTargetDependency */,
+			);
+			name = SpartanDriveTests;
+			productName = SpartanDriveTests;
+			productReference = 091A26BD2405E36300D0F848 /* SpartanDriveTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		091A26C72405E36300D0F848 /* SpartanDriveUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 091A26D72405E36300D0F848 /* Build configuration list for PBXNativeTarget "SpartanDriveUITests" */;
+			buildPhases = (
+				091A26C42405E36300D0F848 /* Sources */,
+				091A26C52405E36300D0F848 /* Frameworks */,
+				091A26C62405E36300D0F848 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				091A26CA2405E36300D0F848 /* PBXTargetDependency */,
+			);
+			name = SpartanDriveUITests;
+			productName = SpartanDriveUITests;
+			productReference = 091A26C82405E36300D0F848 /* SpartanDriveUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		091A269F2405E36100D0F848 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = Spencer;
+				TargetAttributes = {
+					091A26A62405E36100D0F848 = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+					091A26BC2405E36300D0F848 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 091A26A62405E36100D0F848;
+					};
+					091A26C72405E36300D0F848 = {
+						CreatedOnToolsVersion = 11.3.1;
+						TestTargetID = 091A26A62405E36100D0F848;
+					};
+				};
+			};
+			buildConfigurationList = 091A26A22405E36100D0F848 /* Build configuration list for PBXProject "SpartanDrive" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 091A269E2405E36100D0F848;
+			productRefGroup = 091A26A82405E36100D0F848 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				091A26A62405E36100D0F848 /* SpartanDrive */,
+				091A26BC2405E36300D0F848 /* SpartanDriveTests */,
+				091A26C72405E36300D0F848 /* SpartanDriveUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		091A26A52405E36100D0F848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091A26B72405E36300D0F848 /* LaunchScreen.storyboard in Resources */,
+				091A26B42405E36300D0F848 /* Assets.xcassets in Resources */,
+				091A26B22405E36100D0F848 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091A26BB2405E36300D0F848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091A26C62405E36300D0F848 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		091A26A32405E36100D0F848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091A26AF2405E36100D0F848 /* ViewController.swift in Sources */,
+				091A26AB2405E36100D0F848 /* AppDelegate.swift in Sources */,
+				091A26AD2405E36100D0F848 /* SceneDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091A26B92405E36300D0F848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091A26C22405E36300D0F848 /* SpartanDriveTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		091A26C42405E36300D0F848 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				091A26CD2405E36300D0F848 /* SpartanDriveUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		091A26BF2405E36300D0F848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 091A26A62405E36100D0F848 /* SpartanDrive */;
+			targetProxy = 091A26BE2405E36300D0F848 /* PBXContainerItemProxy */;
+		};
+		091A26CA2405E36300D0F848 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 091A26A62405E36100D0F848 /* SpartanDrive */;
+			targetProxy = 091A26C92405E36300D0F848 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		091A26B02405E36100D0F848 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				091A26B12405E36100D0F848 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		091A26B52405E36300D0F848 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				091A26B62405E36300D0F848 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		091A26CF2405E36300D0F848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		091A26D02405E36300D0F848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		091A26D22405E36300D0F848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = SpartanDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		091A26D32405E36300D0F848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = SpartanDrive/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDrive;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		091A26D52405E36300D0F848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = SpartanDriveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpartanDrive.app/SpartanDrive";
+			};
+			name = Debug;
+		};
+		091A26D62405E36300D0F848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = SpartanDriveTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDriveTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SpartanDrive.app/SpartanDrive";
+			};
+			name = Release;
+		};
+		091A26D82405E36300D0F848 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = SpartanDriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpartanDrive;
+			};
+			name = Debug;
+		};
+		091A26D92405E36300D0F848 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
+				INFOPLIST_FILE = SpartanDriveUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDriveUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = SpartanDrive;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		091A26A22405E36100D0F848 /* Build configuration list for PBXProject "SpartanDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091A26CF2405E36300D0F848 /* Debug */,
+				091A26D02405E36300D0F848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091A26D12405E36300D0F848 /* Build configuration list for PBXNativeTarget "SpartanDrive" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091A26D22405E36300D0F848 /* Debug */,
+				091A26D32405E36300D0F848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091A26D42405E36300D0F848 /* Build configuration list for PBXNativeTarget "SpartanDriveTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091A26D52405E36300D0F848 /* Debug */,
+				091A26D62405E36300D0F848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		091A26D72405E36300D0F848 /* Build configuration list for PBXNativeTarget "SpartanDriveUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				091A26D82405E36300D0F848 /* Debug */,
+				091A26D92405E36300D0F848 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 091A269F2405E36100D0F848 /* Project object */;
+}
