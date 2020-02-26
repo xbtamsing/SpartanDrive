@@ -15,6 +15,7 @@
 		091A26B72405E36300D0F848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B52405E36300D0F848 /* LaunchScreen.storyboard */; };
 		091A26C22405E36300D0F848 /* SpartanDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26C12405E36300D0F848 /* SpartanDriveTests.swift */; };
 		091A26CD2405E36300D0F848 /* SpartanDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26CC2405E36300D0F848 /* SpartanDriveUITests.swift */; };
+		091A26DD2405E6FB00D0F848 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091A26DC2405E6FB00D0F848 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,8 @@
 		091A26C82405E36300D0F848 /* SpartanDriveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpartanDriveUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		091A26CC2405E36300D0F848 /* SpartanDriveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpartanDriveUITests.swift; sourceTree = "<group>"; };
 		091A26CE2405E36300D0F848 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpartanDrive.entitlements; sourceTree = "<group>"; };
+		091A26DC2405E6FB00D0F848 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				091A26DD2405E6FB00D0F848 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +87,7 @@
 				091A26C02405E36300D0F848 /* SpartanDriveTests */,
 				091A26CB2405E36300D0F848 /* SpartanDriveUITests */,
 				091A26A82405E36100D0F848 /* Products */,
+				091A26DB2405E6FB00D0F848 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,6 +104,7 @@
 		091A26A92405E36100D0F848 /* SpartanDrive */ = {
 			isa = PBXGroup;
 			children = (
+				091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */,
 				091A26AA2405E36100D0F848 /* AppDelegate.swift */,
 				091A26AC2405E36100D0F848 /* SceneDelegate.swift */,
 				091A26AE2405E36100D0F848 /* ViewController.swift */,
@@ -126,6 +132,14 @@
 				091A26CE2405E36300D0F848 /* Info.plist */,
 			);
 			path = SpartanDriveUITests;
+			sourceTree = "<group>";
+		};
+		091A26DB2405E6FB00D0F848 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				091A26DC2405E6FB00D0F848 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -434,6 +448,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpartanDrive/SpartanDrive.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = SpartanDrive/Info.plist;
@@ -441,8 +457,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.Group5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -452,6 +469,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SpartanDrive/SpartanDrive.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = SpartanDrive/Info.plist;
@@ -459,8 +478,9 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.SpartanDrive;
+				PRODUCT_BUNDLE_IDENTIFIER = edu.SJSU.CMPE137.SpartanDrive.Group5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
