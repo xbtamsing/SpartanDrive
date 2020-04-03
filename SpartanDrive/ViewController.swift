@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import SwiftUI
 
 class ViewController: UIViewController {
-    var count = 0
-    @IBOutlet weak var countLabel: UILabel!
-    @IBAction func countButton(_ sender: Any) {
-        count += 1
-        countLabel.text = "Count: \(count)"
+    
+    // segue to the Login Screen modal, which can in turn present more modal views.
+    @IBSegueAction func getStarted(_ coder: NSCoder) -> UIViewController? {
+        let rootView = ContentView().environmentObject(Authentication())
+        return UIHostingController(coder: coder, rootView: rootView)
     }
 }
 
