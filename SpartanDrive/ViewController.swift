@@ -7,14 +7,8 @@
 //
 
 import UIKit
-import SwiftUI
+import Firebase
 
 class ViewController: UIViewController {
-    
-    // segue to the Login Screen modal, which can in turn present more modal views.
-    @IBSegueAction func getStarted(_ coder: NSCoder) -> UIViewController? {
-        let rootView = ContentView().environmentObject(Authentication())
-        return UIHostingController(coder: coder, rootView: rootView)
-    }
 }
 
