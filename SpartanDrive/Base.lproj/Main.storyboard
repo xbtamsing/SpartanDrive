@@ -19,6 +19,12 @@
                             <userLayoutGuide location="398" affinity="minX"/>
                         </userGuides>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome  to SpartanDrive" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-NR-ABv">
+                                <rect key="frame" x="57" y="254" width="266" height="101"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RZq-cs-pwT">
                                 <rect key="frame" x="57" y="398" width="300" height="100"/>
                                 <subviews>
@@ -65,12 +71,6 @@
                                     <constraint firstAttribute="width" constant="300" id="AgT-40-bbs"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome  to SpartanDrive" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-NR-ABv">
-                                <rect key="frame" x="57" y="254" width="266" height="101"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -346,61 +346,158 @@
             </objects>
             <point key="canvasLocation" x="-93" y="-340"/>
         </scene>
-        <!--Profile-->
+        <!--[TBD]-->
         <scene sceneID="SZH-7o-HXF">
             <objects>
                 <viewController id="aLK-at-3rq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w5v-vy-RmY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OSI-aw-ftc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" selectedImage="person.crop.circle" catalog="system" id="nmV-5L-Xe8"/>
+                    <tabBarItem key="tabBarItem" title="[TBD]" id="nmV-5L-Xe8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljn-u7-9Ao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="-380"/>
+            <point key="canvasLocation" x="2172" y="-287"/>
         </scene>
-        <!--Home-->
+        <!--Base App Home-->
         <scene sceneID="BTl-PX-KBM">
             <objects>
-                <viewController id="hnN-0p-wWz" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BaseAppHomeViewController" id="hnN-0p-wWz" customClass="BaseAppHome" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqu-nl-iAA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dK7-fX-qpl"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="pWO-cg-PSq"/>
+                    <navigationItem key="navigationItem" id="Ele-BB-NG1">
+                        <nil key="title"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="kfp-EB-bc9" kind="show" identifier="showProfile" id="FUe-hU-ObE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-8L-m4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2112" y="-1030"/>
+            <point key="canvasLocation" x="3226" y="-956"/>
         </scene>
-        <!--Home-->
+        <!--Profile-->
+        <scene sceneID="Uk1-hV-OjZ">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" hidesBottomBarWhenPushed="YES" id="kfp-EB-bc9" customClass="Profile" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dvb-WX-d7h">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BDu-zO-So1">
+                                <rect key="frame" x="107" y="693" width="200" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logged in as &quot;userEmail&quot;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wwe-V6-8yi">
+                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="7MT-J4-6aW"/>
+                                            <constraint firstAttribute="height" constant="100" id="fGm-Eq-seM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kcH-d7-3BM">
+                                <rect key="frame" x="57" y="616" width="300" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-Ch-fZB">
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2NH-eV-XXQ"/>
+                                            <constraint firstAttribute="width" constant="300" id="6n2-Hu-MHA"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <state key="normal" title="Sign Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <integer key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="BDu-zO-So1" firstAttribute="leading" secondItem="xdL-kn-QS4" secondAttribute="leading" constant="107" id="Ixx-FE-vyB"/>
+                            <constraint firstItem="kcH-d7-3BM" firstAttribute="centerX" secondItem="dvb-WX-d7h" secondAttribute="centerX" id="OpO-VW-CKo"/>
+                            <constraint firstItem="BDu-zO-So1" firstAttribute="top" secondItem="xdL-kn-QS4" secondAttribute="top" constant="546" id="Oq0-5u-1Sm"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="trailing" secondItem="kcH-d7-3BM" secondAttribute="trailing" constant="57" id="VaR-9h-EmF"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="bottom" secondItem="kcH-d7-3BM" secondAttribute="bottom" constant="206" id="gi8-Rj-n6d"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="trailing" secondItem="BDu-zO-So1" secondAttribute="trailing" constant="107" id="hD9-VC-Ozd"/>
+                            <constraint firstItem="kcH-d7-3BM" firstAttribute="top" secondItem="xdL-kn-QS4" secondAttribute="top" constant="469" id="hbB-oR-zV2"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="bottom" secondItem="BDu-zO-So1" secondAttribute="bottom" constant="69" id="odO-eh-RR1"/>
+                            <constraint firstItem="BDu-zO-So1" firstAttribute="centerX" secondItem="dvb-WX-d7h" secondAttribute="centerX" id="qdj-g9-yfZ"/>
+                            <constraint firstItem="kcH-d7-3BM" firstAttribute="leading" secondItem="xdL-kn-QS4" secondAttribute="leading" constant="57" id="rif-Na-WuQ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xdL-kn-QS4"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="BDZ-G4-c8a"/>
+                    <connections>
+                        <outlet property="currentUserLabel" destination="wwe-V6-8yi" id="5dZ-pT-kiz"/>
+                        <outlet property="signOutButton" destination="SkK-Ch-fZB" id="paA-ye-3vm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m4C-Ls-gbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4049" y="-956"/>
+        </scene>
+        <!--App Home Tab Bar-->
         <scene sceneID="d0B-74-aFE">
             <objects>
-                <tabBarController storyboardIdentifier="HomeViewController" id="VoX-tD-vAz" customClass="Home" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="AppHomeTabBarViewController" id="VoX-tD-vAz" customClass="AppHomeTabBar" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="wrv-Gw-8jH"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LZl-jC-Ch1">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="LZl-jC-Ch1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="hnN-0p-wWz" kind="relationship" relationship="viewControllers" id="scy-MM-CSR"/>
+                        <outlet property="tab" destination="LZl-jC-Ch1" id="i4k-ej-L4J"/>
+                        <segue destination="3D0-EM-oZ2" kind="relationship" relationship="viewControllers" id="scy-MM-CSR"/>
                         <segue destination="aLK-at-3rq" kind="relationship" relationship="viewControllers" id="bEW-jy-4tN"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="opd-6N-pPN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1099" y="-696"/>
+            <point key="canvasLocation" x="1030" y="-607"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="W2w-F3-cYR">
+            <objects>
+                <navigationController storyboardIdentifier="AppHomeNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="3D0-EM-oZ2" customClass="AppHomeNav" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="pWO-cg-PSq"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="RAd-gs-o47">
+                        <rect key="frame" x="0.0" y="44" width="414" height="103"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="45"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hnN-0p-wWz" kind="relationship" relationship="rootViewController" id="RwT-cH-5L4"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RV2-BR-CXO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2172" y="-956"/>
         </scene>
     </scenes>
     <resources>
         <image name="SpartanSpirit_web" width="863" height="928"/>
         <image name="house" catalog="system" width="128" height="110"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
