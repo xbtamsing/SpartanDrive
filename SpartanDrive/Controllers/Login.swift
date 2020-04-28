@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import GoogleSignIn
 
 class Login: UIViewController, UITextFieldDelegate {
     
@@ -25,6 +26,14 @@ class Login: UIViewController, UITextFieldDelegate {
         didSet {
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleScreenTapGesture))
             tappableView.addGestureRecognizer(recognizer)
+        }
+    }
+    
+    @IBOutlet weak var googleSignInButton: GIDSignInButton! {
+        didSet {
+            let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleGoogleSignInTapGesture))
+            googleSignInButton.addGestureRecognizer(recognizer)
+            googleSignInButton.style = .iconOnly
         }
     }
     
@@ -58,7 +67,19 @@ class Login: UIViewController, UITextFieldDelegate {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Login"
         configureTextFields()
+        GIDSignIn.sharedInstance()?.presentingViewController = self
+    }
+    
+    /**
+     * Sets the Login class to be the delegate of the GIDSignIn shared instance.
+     *
+     * This will cause the Login class' signIn extension method to get fired.
+     */
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        GIDSignIn.sharedInstance().delegate = self
     }
     
     /**
@@ -71,7 +92,7 @@ class Login: UIViewController, UITextFieldDelegate {
     ){
         Auth.auth().signIn(withEmail: email, password: password, completion: loginHandler)
     }
-    
+     
     /**
      * Assigns the UITextFieldDelegates to the Login View's text fields.
      *
@@ -156,14 +177,31 @@ class Login: UIViewController, UITextFieldDelegate {
                 else {
                     self.isLoggedIn = true
                     UserDefaults.standard.loggedIn()
-                    // upon a successful login, go to the app's homepage.
-                    guard let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "AppHomeTabBarViewController") as? AppHomeTabBar else { return }
-                    destinationViewController.modalPresentationStyle = .fullScreen
-                    self.present(destinationViewController, animated: true, completion: nil)
+                    self.presentHomeView()
                 }
             })
         }
     }
+    
+    /**
+     * Presents SpartanDrive's Home view to the User.
+     */
+    func presentHomeView() {
+        // upon a successful login, go to the app's homepage.
+        guard let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "AppHomeTabBarViewController") as? AppHomeTabBar else { return }
+        destinationViewController.modalPresentationStyle = .fullScreen
+        self.present(destinationViewController, animated: true, completion: nil)
+    }
+    
+    /**
+       * Handles a tap gesture on the Google "Sign In" button.
+       */
+      @objc func handleGoogleSignInTapGesture() {
+          if self.googleSignInButton.gestureRecognizers![0].state
+              == .ended {
+                GIDSignIn.sharedInstance().signIn()
+          }
+      }
     
     /**
      * Dismounts the Firebase Object's State Listener.
@@ -171,5 +209,30 @@ class Login: UIViewController, UITextFieldDelegate {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         Auth.auth().removeStateDidChangeListener(self.handle!)
+    }
+}
+
+extension Login: GIDSignInDelegate {
+    // Google Sign In
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        print("hello")
+        if let error = error {
+          print(error)
+          return
+        }
+
+        guard let authentication = user.authentication else { return }
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
+                                                          accessToken: authentication.accessToken)
+        
+        // present User Home on a successful login
+        Auth.auth().signIn(with: credential, completion: { (authResult, error) in
+            if let error = error {
+                print(error)
+            } else {
+                UserDefaults.standard.loggedIn()
+                self.presentHomeView()
+            }
+        })
     }
 }

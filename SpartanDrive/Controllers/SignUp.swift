@@ -61,6 +61,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Sign Up"
         configureTextFields()
     }
     

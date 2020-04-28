@@ -43,8 +43,8 @@ class Profile: UIViewController {
             self.signOut()
             UserDefaults.standard.signedOut()
             
-            guard let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as?
-                ViewController else { return }
+            guard let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "WelcomeNavController") as?
+                WelcomeNavController else { return }
             destinationViewController.modalPresentationStyle = .fullScreen
             present(destinationViewController, animated: true, completion: nil)
             
