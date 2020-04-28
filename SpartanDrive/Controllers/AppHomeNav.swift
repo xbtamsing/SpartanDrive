@@ -15,5 +15,14 @@ class AppHomeNav: UINavigationController {
     // Home Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setFontSize()
+    }
+    
+    /**
+     * Sets the font size for the Tab Bar items.
+     */
+    func setFontSize() {
+        let fontSize = UIFont.systemFont(ofSize: 20)
+        self.tabBarItem.setTitleTextAttributes([NSAttributedString.Key.font: fontSize], for: .normal)
     }
 }

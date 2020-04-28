@@ -7,7 +7,6 @@ Designed with the intent of streamlining file accessibility and management for s
 
 * [Swift](https://developer.apple.com/swift/) - *a powerful and intuitive programming language for macOS, iOS, watchOS, tvOS, and beyond.*
 * [Firebase](https://firebase.google.com) - *a comprehensive app development platform, providing an end-to-end identity authentication solution for mobile applications.*
-* [CloudKit](https://developer.apple.com/icloud/cloudkit/) - *a secure way store your app’s data and documents in iCloud — and keep them up to date across macOS, iOS, watchOS, tvOS, and the web.*
 
 # Authors, *Initial Work*
 

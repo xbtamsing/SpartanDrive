@@ -7,6 +7,7 @@ target 'SpartanDrive' do
 
   # Pods for SpartanDrive
     pod 'Firebase/Auth'
+    pod 'GoogleSignIn'
 
   target 'SpartanDriveTests' do
     inherit! :search_paths

@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  WelcomeNavController.swift
 //  SpartanDrive
 //
 //  Created by Spencer on 2/25/20.
@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 
-class ViewController: UIViewController {
+class WelcomeNavController: UINavigationController {
+    
 }
 

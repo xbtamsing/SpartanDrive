@@ -16,6 +16,14 @@ class AppHomeTabBar: UITabBarController {
     // Application Home Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        setTabBarStyling()
+    }
+    
+    /**
+     * Sets the styling for the Application Home's Tab Bar.
+     */
+    func setTabBarStyling() {
         self.tab.tintColor = .black
+        self.tab.backgroundColor = .black
     }
 }

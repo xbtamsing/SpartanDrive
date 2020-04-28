@@ -29,7 +29,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             self.window?.rootViewController = destinationViewController
         }
         else {
-            guard let destinationViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeViewController") as? ViewController
+            guard let destinationViewController = storyboard.instantiateViewController(withIdentifier: "WelcomeNavController") as? WelcomeNavController
                 else { return }
             self.window?.rootViewController = destinationViewController
         }

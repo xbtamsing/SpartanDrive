@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		091A26AB2405E36100D0F848 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AA2405E36100D0F848 /* AppDelegate.swift */; };
 		091A26AD2405E36100D0F848 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AC2405E36100D0F848 /* SceneDelegate.swift */; };
-		091A26AF2405E36100D0F848 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AE2405E36100D0F848 /* ViewController.swift */; };
+		091A26AF2405E36100D0F848 /* WelcomeNavController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26AE2405E36100D0F848 /* WelcomeNavController.swift */; };
 		091A26B22405E36100D0F848 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B02405E36100D0F848 /* Main.storyboard */; };
 		091A26B42405E36300D0F848 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B32405E36300D0F848 /* Assets.xcassets */; };
 		091A26B72405E36300D0F848 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 091A26B52405E36300D0F848 /* LaunchScreen.storyboard */; };
@@ -20,6 +20,7 @@
 		2718203D2456DA2400A3CB8D /* AppHomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718203C2456DA2400A3CB8D /* AppHomeTabBar.swift */; };
 		2718203F2456DAE100A3CB8D /* AppHomeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718203E2456DAE100A3CB8D /* AppHomeNav.swift */; };
 		271820412456E89000A3CB8D /* BaseAppHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271820402456E89000A3CB8D /* BaseAppHome.swift */; };
+		2766D2D82457841300AC5621 /* WelcomeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766D2D72457841300AC5621 /* WelcomeNav.swift */; };
 		276AFDF824554C6D0059AD30 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276AFDF724554C6D0059AD30 /* SignUp.swift */; };
 		276AFDFA2455792A0059AD30 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276AFDF92455792A0059AD30 /* Login.swift */; };
 		277E29AB244D463500F8B206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277E29AA244D463500F8B206 /* GoogleService-Info.plist */; };
@@ -51,7 +52,7 @@
 		091A26A72405E36100D0F848 /* SpartanDrive.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpartanDrive.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		091A26AA2405E36100D0F848 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		091A26AC2405E36100D0F848 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		091A26AE2405E36100D0F848 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		091A26AE2405E36100D0F848 /* WelcomeNavController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNavController.swift; sourceTree = "<group>"; };
 		091A26B12405E36100D0F848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		091A26B32405E36300D0F848 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		091A26B62405E36300D0F848 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -69,6 +70,7 @@
 		2718203C2456DA2400A3CB8D /* AppHomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeTabBar.swift; sourceTree = "<group>"; };
 		2718203E2456DAE100A3CB8D /* AppHomeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeNav.swift; sourceTree = "<group>"; };
 		271820402456E89000A3CB8D /* BaseAppHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppHome.swift; sourceTree = "<group>"; };
+		2766D2D72457841300AC5621 /* WelcomeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNav.swift; sourceTree = "<group>"; };
 		276AFDF724554C6D0059AD30 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		276AFDF92455792A0059AD30 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		277E29AA244D463500F8B206 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -143,7 +145,7 @@
 				091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */,
 				091A26AA2405E36100D0F848 /* AppDelegate.swift */,
 				091A26AC2405E36100D0F848 /* SceneDelegate.swift */,
-				091A26AE2405E36100D0F848 /* ViewController.swift */,
+				091A26AE2405E36100D0F848 /* WelcomeNavController.swift */,
 				091A26B02405E36100D0F848 /* Main.storyboard */,
 				091A26B32405E36300D0F848 /* Assets.xcassets */,
 				091A26B52405E36300D0F848 /* LaunchScreen.storyboard */,
@@ -192,6 +194,7 @@
 				276AFDF92455792A0059AD30 /* Login.swift */,
 				2718203C2456DA2400A3CB8D /* AppHomeTabBar.swift */,
 				271820402456E89000A3CB8D /* BaseAppHome.swift */,
+				2766D2D72457841300AC5621 /* WelcomeNav.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -229,6 +232,7 @@
 				091A26A42405E36100D0F848 /* Frameworks */,
 				091A26A52405E36100D0F848 /* Resources */,
 				B55F3F5DB0DFB2B24675417C /* [CP] Embed Pods Frameworks */,
+				DFF2CA6189425973260ADB20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -267,6 +271,7 @@
 				091A26C52405E36300D0F848 /* Frameworks */,
 				091A26C62405E36300D0F848 /* Resources */,
 				1FAA28F0F4D7F3197218C0AB /* [CP] Embed Pods Frameworks */,
+				881A0FCC9FDF2E9F1EDB9680 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -389,6 +394,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		881A0FCC9FDF2E9F1EDB9680 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpartanDrive-SpartanDriveUITests/Pods-SpartanDrive-SpartanDriveUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpartanDrive-SpartanDriveUITests/Pods-SpartanDrive-SpartanDriveUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpartanDrive-SpartanDriveUITests/Pods-SpartanDrive-SpartanDriveUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		B55F3F5DB0DFB2B24675417C /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -428,6 +450,23 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		DFF2CA6189425973260ADB20 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpartanDrive/Pods-SpartanDrive-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SpartanDrive/Pods-SpartanDrive-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SpartanDrive/Pods-SpartanDrive-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F6E2F9DE87A9029367577B4B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -460,13 +499,14 @@
 				276AFDF824554C6D0059AD30 /* SignUp.swift in Sources */,
 				276AFDFA2455792A0059AD30 /* Login.swift in Sources */,
 				2718203F2456DAE100A3CB8D /* AppHomeNav.swift in Sources */,
-				091A26AF2405E36100D0F848 /* ViewController.swift in Sources */,
+				091A26AF2405E36100D0F848 /* WelcomeNavController.swift in Sources */,
 				091A26AB2405E36100D0F848 /* AppDelegate.swift in Sources */,
 				2718203D2456DA2400A3CB8D /* AppHomeTabBar.swift in Sources */,
 				27EA948F2436636E00E1B528 /* User.swift in Sources */,
 				27CD46922456204D0099DAFF /* UserDefaults.swift in Sources */,
 				2718203B2456D00200A3CB8D /* Profile.swift in Sources */,
 				271820412456E89000A3CB8D /* BaseAppHome.swift in Sources */,
+				2766D2D82457841300AC5621 /* WelcomeNav.swift in Sources */,
 				091A26AD2405E36100D0F848 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
