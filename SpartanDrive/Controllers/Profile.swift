@@ -12,7 +12,13 @@ import Firebase
 class Profile: UIViewController {
     
     // Profile Properties
+    public var currentUser: UserProfile!
     @IBOutlet weak var currentUserLabel: UILabel!
+    @IBOutlet weak var filesOwned: UILabel!
+    @IBOutlet weak var foldersOwned: UILabel!
+    @IBOutlet weak var totalStorageUsed: UILabel!
+    
+    
     @IBOutlet weak var signOutButton: UIButton! {
         didSet {
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleSignOutTapGesture))
@@ -21,18 +27,16 @@ class Profile: UIViewController {
     }
     
     
-    private var userEmail: String = "" {
-        didSet {
-            self.currentUserLabel.text = "Logged in as\n \(self.userEmail)"
-        }
-    }
-    
     // Profile Methods
+    /**
+    * Prepares the View elements as the app is loaded into memory.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
-        getCurrentUser()
+        self.setUserInfo()
         title = "Profile"
     }
+    
     
     /**
      * Handles the User tapping the "Sign Out" button.
@@ -51,6 +55,7 @@ class Profile: UIViewController {
         }
     }
     
+    
     /**
      * Signs out the currently active User using Firebase.
      */
@@ -63,12 +68,34 @@ class Profile: UIViewController {
         }
     }
     
+    
+    /**
+     * Sets the information needed for the User's Usage Report.
+     */
+    func setUserInfo() {
+        self.currentUser.userEmail = self.getCurrentUser()
+        self.currentUserLabel.text = "Logged in as \(self.currentUser.userEmail)"
+        self.filesOwned.text = "Files Owned: \(self.currentUser.filesOwned)"
+        let totalStorage: Int64 = {
+            var total: Int64 = 0
+            for file in 0..<self.currentUser.storageUsed.count {
+                total += self.currentUser.storageUsed[file]
+            }
+            return total
+        }()
+        self.totalStorageUsed.text = "Total Storage Space Used: \(totalStorage) bytes"
+        
+    }
+    
+    
     /**
      * Gets the email of the currently signed in User.
      */
-    func getCurrentUser() -> Void {
+    func getCurrentUser() -> String {
         if let user = Auth.auth().currentUser {
-            self.userEmail = user.email!
+            return user.email!
         }
+        return ""
     }
+    
 }

@@ -11,7 +11,7 @@ import Firebase
 
 class SignUp: UIViewController, UITextFieldDelegate {
     
-    // SignUp Properties
+    // SignUp Properties --------------------------------------------------------------------------------------------------
     @IBOutlet private weak var email: UITextField!
     @IBOutlet private weak var password: UITextField!
     @IBOutlet private weak var confirmPassword: UITextField!
@@ -56,14 +56,16 @@ class SignUp: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     /**
-     * Prepares view elements.
-     */
+    * Prepares the View elements as the app is loaded into memory.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Sign Up"
         configureTextFields()
     }
+    
     
     /**
      * Registers a new SpartanDrive User with Firebase.
@@ -75,6 +77,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
     ){
         Auth.auth().createUser(withEmail: email, password: password, completion: signUpHandler)
     }
+    
     
     /**
      * Assigns the UITextFieldDelegates to the SignUp View's input text fields.
@@ -102,6 +105,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
         self.confirmPassword.isSecureTextEntry = true
     }
     
+    
     /**
      * Called after a text field becomes the First Responder.
      */
@@ -110,6 +114,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
         textField.tintColor = #colorLiteral(red: 0, green: 0.3333333333, blue: 0.6352941176, alpha: 1)
         textField.layer.borderColor = #colorLiteral(red: 0, green: 0.3333333333, blue: 0.6352941176, alpha: 1)
     }
+    
     
     /**
      * Called after a text field resigns its First Responder Status.
@@ -131,6 +136,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
         textField.layer.borderColor = nil
     }
     
+    
     /**
      * Handles a tap gesture occuring within this View.
      */
@@ -148,6 +154,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     
     /**
      * Handles a tap gesture on the "Sign Up" button.
@@ -178,6 +185,7 @@ class SignUp: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
     
     /**
      * Dismounts the Firebase Object's State Listener.

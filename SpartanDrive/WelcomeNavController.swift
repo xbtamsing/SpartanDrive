@@ -10,6 +10,6 @@ import UIKit
 import Firebase
 
 class WelcomeNavController: UINavigationController {
-    
+    // ...
 }
 

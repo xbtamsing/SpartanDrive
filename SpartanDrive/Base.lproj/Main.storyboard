@@ -347,28 +347,28 @@
             </objects>
             <point key="canvasLocation" x="815.94202898550736" y="-307.36607142857139"/>
         </scene>
-        <!--[TBD]-->
+        <!--[TBD}-->
         <scene sceneID="SZH-7o-HXF">
             <objects>
                 <viewController id="aLK-at-3rq" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="w5v-vy-RmY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="OSI-aw-ftc"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="[TBD]" id="nmV-5L-Xe8"/>
+                    <tabBarItem key="tabBarItem" title="[TBD}" id="nmV-5L-Xe8"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ljn-u7-9Ao" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4613.04347826087" y="-340.17857142857139"/>
+            <point key="canvasLocation" x="3703" y="-307"/>
         </scene>
         <!--Base App Home-->
         <scene sceneID="BTl-PX-KBM">
             <objects>
                 <viewController storyboardIdentifier="BaseAppHomeViewController" id="hnN-0p-wWz" customClass="BaseAppHome" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fqu-nl-iAA">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="dK7-fX-qpl"/>
@@ -378,11 +378,28 @@
                     </navigationItem>
                     <connections>
                         <segue destination="kfp-EB-bc9" kind="show" identifier="showProfile" id="FUe-hU-ObE"/>
+                        <segue destination="1OQ-BY-tqz" kind="show" identifier="loadFile" id="3OU-0Y-Crp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-8L-m4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4757" y="-1009"/>
+            <point key="canvasLocation" x="4756.521739130435" y="-1009.1517857142857"/>
+        </scene>
+        <!--Web View-->
+        <scene sceneID="2i8-T2-fse">
+            <objects>
+                <viewController storyboardIdentifier="WebViewVC" id="1OQ-BY-tqz" customClass="WebView" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="jo7-jP-tv7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="67t-46-GIJ"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="zly-gf-C6D"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rj-ao-LDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5651" y="-1308"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Uk1-hV-OjZ">
@@ -432,40 +449,90 @@
                                     </button>
                                 </subviews>
                             </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Usage Report" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ycq-j1-bHd">
+                                <rect key="frame" x="125" y="259" width="164" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="27"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Ew4-GZ-2su">
+                                <rect key="frame" x="32" y="396" width="350" height="104.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Files Owned:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DMX-8c-cEP">
+                                        <rect key="frame" x="0.0" y="0.0" width="350" height="21.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="nz7-DK-Aqs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Folders Owned:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6kI-Bl-6F9">
+                                        <rect key="frame" x="0.0" y="41.5" width="350" height="21.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="2dT-1m-wYc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total Storage Space Used:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7AM-nW-OQx">
+                                        <rect key="frame" x="0.0" y="83" width="350" height="21.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="350" id="Jnf-rI-P0E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Ew4-GZ-2su" firstAttribute="leading" secondItem="xdL-kn-QS4" secondAttribute="leading" constant="32" id="7RB-Y8-5Ol"/>
                             <constraint firstItem="BDu-zO-So1" firstAttribute="leading" secondItem="xdL-kn-QS4" secondAttribute="leading" constant="107" id="Ixx-FE-vyB"/>
                             <constraint firstItem="kcH-d7-3BM" firstAttribute="centerX" secondItem="dvb-WX-d7h" secondAttribute="centerX" id="OpO-VW-CKo"/>
                             <constraint firstItem="BDu-zO-So1" firstAttribute="top" secondItem="xdL-kn-QS4" secondAttribute="top" constant="546" id="Oq0-5u-1Sm"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="bottom" secondItem="ycq-j1-bHd" secondAttribute="bottom" constant="570.5" id="Qha-aC-8ts"/>
                             <constraint firstItem="xdL-kn-QS4" firstAttribute="trailing" secondItem="kcH-d7-3BM" secondAttribute="trailing" constant="57" id="VaR-9h-EmF"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="bottom" secondItem="Ew4-GZ-2su" secondAttribute="bottom" constant="361.5" id="YY7-3o-HRT"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="trailing" secondItem="Ew4-GZ-2su" secondAttribute="trailing" constant="32" id="cs6-6m-VRb"/>
                             <constraint firstItem="xdL-kn-QS4" firstAttribute="bottom" secondItem="kcH-d7-3BM" secondAttribute="bottom" constant="206" id="gi8-Rj-n6d"/>
                             <constraint firstItem="xdL-kn-QS4" firstAttribute="trailing" secondItem="BDu-zO-So1" secondAttribute="trailing" constant="107" id="hD9-VC-Ozd"/>
                             <constraint firstItem="kcH-d7-3BM" firstAttribute="top" secondItem="xdL-kn-QS4" secondAttribute="top" constant="469" id="hbB-oR-zV2"/>
+                            <constraint firstItem="ycq-j1-bHd" firstAttribute="leading" secondItem="xdL-kn-QS4" secondAttribute="leading" constant="125" id="hz6-jT-pQY"/>
+                            <constraint firstItem="xdL-kn-QS4" firstAttribute="trailing" secondItem="ycq-j1-bHd" secondAttribute="trailing" constant="125" id="lwh-Jh-fUI"/>
                             <constraint firstItem="xdL-kn-QS4" firstAttribute="bottom" secondItem="BDu-zO-So1" secondAttribute="bottom" constant="69" id="odO-eh-RR1"/>
+                            <constraint firstItem="Ew4-GZ-2su" firstAttribute="top" secondItem="xdL-kn-QS4" secondAttribute="top" constant="249" id="pUg-HC-vuj"/>
                             <constraint firstItem="BDu-zO-So1" firstAttribute="centerX" secondItem="dvb-WX-d7h" secondAttribute="centerX" id="qdj-g9-yfZ"/>
                             <constraint firstItem="kcH-d7-3BM" firstAttribute="leading" secondItem="xdL-kn-QS4" secondAttribute="leading" constant="57" id="rif-Na-WuQ"/>
+                            <constraint firstItem="ycq-j1-bHd" firstAttribute="top" secondItem="xdL-kn-QS4" secondAttribute="top" constant="112" id="vUN-mX-7Sc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="xdL-kn-QS4"/>
                     </view>
                     <navigationItem key="navigationItem" id="BDZ-G4-c8a"/>
                     <connections>
                         <outlet property="currentUserLabel" destination="wwe-V6-8yi" id="5dZ-pT-kiz"/>
+                        <outlet property="filesOwned" destination="DMX-8c-cEP" id="YoT-Rd-t0z"/>
+                        <outlet property="foldersOwned" destination="6kI-Bl-6F9" id="sBd-XL-Vu5"/>
                         <outlet property="signOutButton" destination="SkK-Ch-fZB" id="paA-ye-3vm"/>
+                        <outlet property="totalStorageUsed" destination="7AM-nW-OQx" id="XcN-0e-XZ0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4C-Ls-gbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5580" y="-1009"/>
+            <point key="canvasLocation" x="5652" y="-629"/>
         </scene>
         <!--App Home Tab Bar-->
         <scene sceneID="d0B-74-aFE">
             <objects>
                 <tabBarController storyboardIdentifier="AppHomeTabBarViewController" id="VoX-tD-vAz" customClass="AppHomeTabBar" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="wrv-Gw-8jH"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translucent="NO" id="LZl-jC-Ch1">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LZl-jC-Ch1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="0.50123073626712333" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <outlet property="tab" destination="LZl-jC-Ch1" id="i4k-ej-L4J"/>
@@ -477,11 +544,11 @@
             </objects>
             <point key="canvasLocation" x="2561" y="-660"/>
         </scene>
-        <!--Home-->
+        <!--App Home Nav-->
         <scene sceneID="W2w-F3-cYR">
             <objects>
                 <navigationController storyboardIdentifier="AppHomeNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="3D0-EM-oZ2" customClass="AppHomeNav" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" selectedImage="house" catalog="system" id="pWO-cg-PSq"/>
+                    <tabBarItem key="tabBarItem" title="" id="pWO-cg-PSq"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" largeTitles="YES" id="RAd-gs-o47">
                         <rect key="frame" x="0.0" y="44" width="414" height="103"/>
@@ -521,7 +588,4 @@
             <point key="canvasLocation" x="-920.28985507246387" y="5.3571428571428568"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="house" catalog="system" width="128" height="110"/>
-    </resources>
 </document>

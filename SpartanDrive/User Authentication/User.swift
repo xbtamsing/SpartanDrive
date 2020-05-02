@@ -17,9 +17,11 @@ class User {
     var uid: String = ""
     var email: String? = ""
     
+    
     // User Initialization
     init(uid: String, email: String?) {
         self.uid = uid
         self.email = email
     }
+    
 }

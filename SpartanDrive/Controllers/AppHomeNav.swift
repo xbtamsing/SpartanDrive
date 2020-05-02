@@ -13,6 +13,9 @@ class AppHomeNav: UINavigationController {
     // Home Properties
     
     // Home Methods
+    /**
+    * Prepares the View elements as the app is loaded into memory.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         setFontSize()
