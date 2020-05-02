@@ -13,17 +13,22 @@ class AppHomeTabBar: UITabBarController {
     // Application Home Properties
     @IBOutlet weak var tab: UITabBar!
     
+    
     // Application Home Methods
+    /**
+    * Prepares the View elements as the app is loaded into memory.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         setTabBarStyling()
     }
     
+    
     /**
      * Sets the styling for the Application Home's Tab Bar.
      */
     func setTabBarStyling() {
-        self.tab.tintColor = .black
-        self.tab.backgroundColor = .black
+        self.tab.tintColor = #colorLiteral(red: 0.8980392157, green: 0.6588235294, blue: 0.137254902, alpha: 1)
     }
+    
 }

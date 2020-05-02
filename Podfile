@@ -7,6 +7,7 @@ target 'SpartanDrive' do
 
   # Pods for SpartanDrive
     pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
     pod 'GoogleSignIn'
 
   target 'SpartanDriveTests' do

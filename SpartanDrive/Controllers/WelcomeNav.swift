@@ -11,13 +11,18 @@ import UIKit
 class WelcomeNav: UIViewController {
     
     // WelcomeNav Properties
+    // ...
     
     // WelcomeNav Methods
+    /**
+    * Prepares the View elements as the app is loaded into memory.
+    */
     override func viewDidLoad() {
         super.viewDidLoad()
         configureLeftNavigationButton()
         title = ""
     }
+    
     
     func configureLeftNavigationButton() {
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)

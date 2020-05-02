@@ -24,7 +24,14 @@
 		276AFDF824554C6D0059AD30 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276AFDF724554C6D0059AD30 /* SignUp.swift */; };
 		276AFDFA2455792A0059AD30 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276AFDF92455792A0059AD30 /* Login.swift */; };
 		277E29AB244D463500F8B206 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 277E29AA244D463500F8B206 /* GoogleService-Info.plist */; };
+		27BF0A4F24592B070066651C /* FileStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BF0A4E24592B070066651C /* FileStorage.swift */; };
+		27BF0A5324593CE20066651C /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BF0A5224593CE20066651C /* UserProfile.swift */; };
 		27CD46922456204D0099DAFF /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CD46912456204D0099DAFF /* UserDefaults.swift */; };
+		27D52EB7245BCD400084D958 /* ViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EB6245BCD400084D958 /* ViewConstraints.swift */; };
+		27D52EB9245BD33B0084D958 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EB8245BD33B0084D958 /* FileCell.swift */; };
+		27D52EBD245D51D80084D958 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EBC245D51D80084D958 /* Images.swift */; };
+		27D52EC1245D6F180084D958 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EC0245D6F180084D958 /* WebView.swift */; };
+		27E15E67245995240087FF23 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E15E66245995240087FF23 /* File.swift */; };
 		27EA948F2436636E00E1B528 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA948E2436636E00E1B528 /* User.swift */; };
 		4A9014C8679A0DDB85790C5A /* Pods_SpartanDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF84E2F1527B097F872B5759 /* Pods_SpartanDrive.framework */; };
 		599C7FB0C0115C46758D04F2 /* Pods_SpartanDrive_SpartanDriveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4F4B37455A45DDA456DDB9F /* Pods_SpartanDrive_SpartanDriveUITests.framework */; };
@@ -74,7 +81,14 @@
 		276AFDF724554C6D0059AD30 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		276AFDF92455792A0059AD30 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		277E29AA244D463500F8B206 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		27BF0A4E24592B070066651C /* FileStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileStorage.swift; sourceTree = "<group>"; };
+		27BF0A5224593CE20066651C /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 		27CD46912456204D0099DAFF /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
+		27D52EB6245BCD400084D958 /* ViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewConstraints.swift; sourceTree = "<group>"; };
+		27D52EB8245BD33B0084D958 /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
+		27D52EBC245D51D80084D958 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
+		27D52EC0245D6F180084D958 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		27E15E66245995240087FF23 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		27EA948E2436636E00E1B528 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3CDB35A3DB7E8F94031B076B /* Pods-SpartanDrive-SpartanDriveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive-SpartanDriveUITests.release.xcconfig"; path = "Target Support Files/Pods-SpartanDrive-SpartanDriveUITests/Pods-SpartanDrive-SpartanDriveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		48963702F7160F3A9C8E2F83 /* Pods_SpartanDriveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SpartanDriveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -140,18 +154,18 @@
 		091A26A92405E36100D0F848 /* SpartanDrive */ = {
 			isa = PBXGroup;
 			children = (
+				27D52EBB245D51CB0084D958 /* Constants */,
+				27BF0A4D24592AF70066651C /* Models */,
 				278627CB24552DD6004A04B5 /* Controllers */,
 				27EA948D2436636100E1B528 /* User Authentication */,
-				091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */,
-				091A26AA2405E36100D0F848 /* AppDelegate.swift */,
-				091A26AC2405E36100D0F848 /* SceneDelegate.swift */,
 				091A26AE2405E36100D0F848 /* WelcomeNavController.swift */,
 				091A26B02405E36100D0F848 /* Main.storyboard */,
-				091A26B32405E36300D0F848 /* Assets.xcassets */,
-				091A26B52405E36300D0F848 /* LaunchScreen.storyboard */,
 				277E29AA244D463500F8B206 /* GoogleService-Info.plist */,
 				091A26B82405E36300D0F848 /* Info.plist */,
-				27CD46912456204D0099DAFF /* UserDefaults.swift */,
+				091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */,
+				27D52EB8245BD33B0084D958 /* FileCell.swift */,
+				27D52EB5245BCD2C0084D958 /* Utilities */,
+				27D52EB2245BCA0F0084D958 /* Supporting Files */,
 			);
 			path = SpartanDrive;
 			sourceTree = "<group>";
@@ -195,8 +209,47 @@
 				2718203C2456DA2400A3CB8D /* AppHomeTabBar.swift */,
 				271820402456E89000A3CB8D /* BaseAppHome.swift */,
 				2766D2D72457841300AC5621 /* WelcomeNav.swift */,
+				27D52EC0245D6F180084D958 /* WebView.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		27BF0A4D24592AF70066651C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				27E15E66245995240087FF23 /* File.swift */,
+				27BF0A4E24592B070066651C /* FileStorage.swift */,
+				27BF0A5224593CE20066651C /* UserProfile.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		27D52EB2245BCA0F0084D958 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				091A26AA2405E36100D0F848 /* AppDelegate.swift */,
+				091A26AC2405E36100D0F848 /* SceneDelegate.swift */,
+				091A26B52405E36300D0F848 /* LaunchScreen.storyboard */,
+				091A26B32405E36300D0F848 /* Assets.xcassets */,
+				27CD46912456204D0099DAFF /* UserDefaults.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		27D52EB5245BCD2C0084D958 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				27D52EB6245BCD400084D958 /* ViewConstraints.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		27D52EBB245D51CB0084D958 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				27D52EBC245D51D80084D958 /* Images.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 		27EA948D2436636100E1B528 /* User Authentication */ = {
@@ -497,13 +550,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				276AFDF824554C6D0059AD30 /* SignUp.swift in Sources */,
+				27D52EB9245BD33B0084D958 /* FileCell.swift in Sources */,
 				276AFDFA2455792A0059AD30 /* Login.swift in Sources */,
+				27BF0A5324593CE20066651C /* UserProfile.swift in Sources */,
+				27D52EB7245BCD400084D958 /* ViewConstraints.swift in Sources */,
 				2718203F2456DAE100A3CB8D /* AppHomeNav.swift in Sources */,
 				091A26AF2405E36100D0F848 /* WelcomeNavController.swift in Sources */,
+				27E15E67245995240087FF23 /* File.swift in Sources */,
 				091A26AB2405E36100D0F848 /* AppDelegate.swift in Sources */,
 				2718203D2456DA2400A3CB8D /* AppHomeTabBar.swift in Sources */,
+				27BF0A4F24592B070066651C /* FileStorage.swift in Sources */,
 				27EA948F2436636E00E1B528 /* User.swift in Sources */,
 				27CD46922456204D0099DAFF /* UserDefaults.swift in Sources */,
+				27D52EC1245D6F180084D958 /* WebView.swift in Sources */,
+				27D52EBD245D51D80084D958 /* Images.swift in Sources */,
 				2718203B2456D00200A3CB8D /* Profile.swift in Sources */,
 				271820412456E89000A3CB8D /* BaseAppHome.swift in Sources */,
 				2766D2D82457841300AC5621 /* WelcomeNav.swift in Sources */,
