@@ -31,6 +31,7 @@
 		27D52EB9245BD33B0084D958 /* FileCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EB8245BD33B0084D958 /* FileCell.swift */; };
 		27D52EBD245D51D80084D958 /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EBC245D51D80084D958 /* Images.swift */; };
 		27D52EC1245D6F180084D958 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EC0245D6F180084D958 /* WebView.swift */; };
+		27D52EC3245E31C70084D958 /* FileDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27D52EC2245E31C70084D958 /* FileDescription.swift */; };
 		27E15E67245995240087FF23 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27E15E66245995240087FF23 /* File.swift */; };
 		27EA948F2436636E00E1B528 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27EA948E2436636E00E1B528 /* User.swift */; };
 		4A9014C8679A0DDB85790C5A /* Pods_SpartanDrive.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF84E2F1527B097F872B5759 /* Pods_SpartanDrive.framework */; };
@@ -88,6 +89,7 @@
 		27D52EB8245BD33B0084D958 /* FileCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCell.swift; sourceTree = "<group>"; };
 		27D52EBC245D51D80084D958 /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		27D52EC0245D6F180084D958 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		27D52EC2245E31C70084D958 /* FileDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileDescription.swift; sourceTree = "<group>"; };
 		27E15E66245995240087FF23 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		27EA948E2436636E00E1B528 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		3CDB35A3DB7E8F94031B076B /* Pods-SpartanDrive-SpartanDriveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive-SpartanDriveUITests.release.xcconfig"; path = "Target Support Files/Pods-SpartanDrive-SpartanDriveUITests/Pods-SpartanDrive-SpartanDriveUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -210,6 +212,7 @@
 				271820402456E89000A3CB8D /* BaseAppHome.swift */,
 				2766D2D72457841300AC5621 /* WelcomeNav.swift */,
 				27D52EC0245D6F180084D958 /* WebView.swift */,
+				27D52EC2245E31C70084D958 /* FileDescription.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				27D52EB9245BD33B0084D958 /* FileCell.swift in Sources */,
 				276AFDFA2455792A0059AD30 /* Login.swift in Sources */,
 				27BF0A5324593CE20066651C /* UserProfile.swift in Sources */,
+				27D52EC3245E31C70084D958 /* FileDescription.swift in Sources */,
 				27D52EB7245BCD400084D958 /* ViewConstraints.swift in Sources */,
 				2718203F2456DAE100A3CB8D /* AppHomeNav.swift in Sources */,
 				091A26AF2405E36100D0F848 /* WelcomeNavController.swift in Sources */,

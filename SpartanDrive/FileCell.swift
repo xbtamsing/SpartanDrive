@@ -17,7 +17,6 @@ class FileCell: UITableViewCell {
     // FileCell properties
     public var fileImageView = UIImageView()
     public var titleFromName = UILabel()
-    public var titleFromFileSize = UILabel()
     
     
     // Initialization
@@ -26,17 +25,14 @@ class FileCell: UITableViewCell {
         // adding views...
         addSubview(fileImageView)
         addSubview(titleFromName)
-        addSubview(titleFromFileSize)
         
         // configuring views...
         configureImageView()
         configureLabels(label: self.titleFromName)
-        configureLabels(label: self.titleFromFileSize)
         
         // constraining views...
         setImageConstraints()
         setNameLabelConstraints(name: self.titleFromName)
-        setSizeLabelConstraints(size: self.titleFromFileSize)
     }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
@@ -50,7 +46,6 @@ class FileCell: UITableViewCell {
     func setFileProperties(file: File) {
         self.fileImageView.image = file.icon
         self.titleFromName.text = file.name
-        self.titleFromFileSize.text = file.size
     }
     
     
@@ -95,16 +90,5 @@ class FileCell: UITableViewCell {
         self.titleFromName.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive                   = true
     }
     
-    
-    /**
-    * Sets the constraints for this FileCell's file size UILabel.
-    */
-    func setSizeLabelConstraints(size: UILabel) {
-        self.titleFromFileSize.translatesAutoresizingMaskIntoConstraints                                                    = false
-        self.titleFromFileSize.centerYAnchor.constraint(equalTo: centerYAnchor).isActive                                    = true
-        self.titleFromFileSize.leadingAnchor.constraint(equalTo: self.fileImageView.trailingAnchor, constant: 20).isActive  = true
-        self.titleFromFileSize.heightAnchor.constraint(equalToConstant: 40).isActive                                        = true
-        self.titleFromFileSize.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12).isActive                   = true
-    }
 }
 

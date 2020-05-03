@@ -19,6 +19,7 @@ class BaseAppHome: UIViewController {
     private var createFolderButton: UIButton! = UIButton(type: .system)
     public var currentUser: UserProfile = UserProfile()
     private var currentUserUIDPath: String = String()
+    private var indexOfFileToViewDescriptionOf: IndexPath!
     
     let tableView = UITableView()
     // array of files to be shown within the table view cells. 
@@ -28,21 +29,23 @@ class BaseAppHome: UIViewController {
     struct Cells {
         static let identifier = "FileCell"
     }
+    
     // search bar related
     private var filteredFiles: [File] = [File]()
-    
-    // END PROPERTIES ----------------------------------------------------------------------------------------------------------
-    
     
     
     // BaseAppHome Methods ------------------------------------------------------------------------------------------------------------
     
+    /**
+     * Used here to deselect the currently selected uitablecell/row when the WebView is popped off of the navigation stack.
+     */
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if let selectedRow = self.tableView.indexPathForSelectedRow {
             self.tableView.deselectRow(at: selectedRow, animated: true)
         }
     }
+    
     
     /**
     * Prepares the View elements as the app is loaded into memory.
@@ -57,6 +60,7 @@ class BaseAppHome: UIViewController {
         self.configureTableView()
         title = "Home"
     }
+    
     
     /**
      * Configures the Home's Profile button.
@@ -101,6 +105,7 @@ class BaseAppHome: UIViewController {
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: self.uploadFileButton), UIBarButtonItem(customView: self.createFolderButton)]
     }
     
+    
     /**
      * Configures this View's UISearchController.
      */
@@ -111,6 +116,7 @@ class BaseAppHome: UIViewController {
         self.navigationItem.searchController = search
         search.searchResultsUpdater = self
     }
+    
     
     /**
      * Configures this View's TableView.
@@ -133,6 +139,7 @@ class BaseAppHome: UIViewController {
         self.tableView.pin(to: self.view)
     }
     
+    
     /**
      * Handles a tap on the Profile button by segueing to the User's Profile Page.
      */
@@ -142,6 +149,7 @@ class BaseAppHome: UIViewController {
             performSegue(withIdentifier: "showProfile", sender: self)
         }
     }
+    
     
     /**
      * Used to pass the current user's data from BaseAppHome to the Profile View Controller's UserProfile instance.
@@ -154,7 +162,12 @@ class BaseAppHome: UIViewController {
             self.currentUser.storageUsed = self.storageUsed
             destination.currentUser = self.currentUser
         }
+        else if segue.identifier == "showFileDescription" {
+            guard let destination = segue.destination as? FileDescription else { return }
+            destination.fileName = self.files[self.indexOfFileToViewDescriptionOf.row].name
+        }
     }
+    
     
     /**
     * Handles a tap on the Upload File button by uploading the file to Firebase Storage.
@@ -173,6 +186,7 @@ class BaseAppHome: UIViewController {
         }
     }
     
+    
     /**
      * Retrieves the uid of the currently signed User for use within the file upload path.
      */
@@ -187,8 +201,8 @@ class BaseAppHome: UIViewController {
     
 }
 
+// ---- DOCUMENT PICKER -----
 extension BaseAppHome: UIDocumentPickerDelegate {
-    
     /**
      * Called after a file has been selected from the iPhone's File System.
      */
@@ -213,8 +227,11 @@ extension BaseAppHome: UIDocumentPickerDelegate {
     }
 }
 
+// ---- UITABLE DELEGATE & DATASOURCE -----
 extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
-    
+    /**
+     * Called by this UITableView to determine the number of sections to display.
+     */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if !(self.navigationItem.searchController?.searchBar.text!.isEmpty)! {
             return self.filteredFiles.count
@@ -224,6 +241,9 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
+    /**
+    * Called by this UITableView to determine what FileCell to use when populating the UITableView's cells.
+    */
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // also to be filled in later on.
         let cell = self.tableView.dequeueReusableCell(withIdentifier: Cells.identifier) as? FileCell
@@ -239,14 +259,24 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            self.deleteFileFromStorage(filePath: self.files[indexPath.row].name, fileSizeAtIndex: indexPath.row)
-            self.files.remove(at: indexPath.row)
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
+    /* replaced further below.
+        /**
+        * Called by this UITableView to handle a right-to-left (or delete) swipe.
+        */
+        func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+            if editingStyle == .delete {
+                self.deleteFileFromStorage(filePath: self.files[indexPath.row].name, fileSizeAtIndex: indexPath.row)
+                self.files.remove(at: indexPath.row)
+                self.tableView.deleteRows(at: [indexPath], with: .fade)
+            }
         }
-    }
+    */
     
+    /**
+     * Called by this UITableView to determine what row (and thus, what File) has been selected.
+     *
+     * Proceeds to push the WebView loading the URL request  of the File onto this Navigation stack.
+     */
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let fileStorage = FileStorage()
@@ -258,15 +288,41 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
             else {
                 guard let destination = self.storyboard?.instantiateViewController(withIdentifier: "WebViewVC") as? WebView else { return }
                 destination.fileURL = url!
+                // currently unused
                 destination.fileTitle = self.files[indexPath.row].name
                 self.navigationController?.pushViewController(destination, animated: true)
             }
         })
     }
     
+    func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let viewFileInfo = UIContextualAction(style: .normal, title: "View Info", handler: { (action, view, completion) in
+            self.indexOfFileToViewDescriptionOf = indexPath
+            self.performSegue(withIdentifier: "showFileDescription", sender: self)
+            completion(true)
+        })
+        viewFileInfo.backgroundColor = #colorLiteral(red: 0, green: 0.3333333333, blue: 0.6352941176, alpha: 1)
+        viewFileInfo.image = UIImage(systemName: "info.circle")
+        
+        return UISwipeActionsConfiguration(actions: [viewFileInfo])
+    }
     
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let deleteRow = UIContextualAction(style: .normal, title: "Delete Row", handler: { (action, view, completion) in
+            self.deleteFileFromStorage(filePath: self.files[indexPath.row].name, fileSizeAtIndex: indexPath.row)
+            self.files.remove(at: indexPath.row)
+            self.tableView.deleteRows(at: [indexPath], with: .fade)
+            completion(true)
+        })
+        deleteRow.backgroundColor = .red
+        deleteRow.image = UIImage(systemName: "trash")
+        
+        return UISwipeActionsConfiguration(actions: [deleteRow])
+    }
 }
 
+// ---- FETCH DATA FROM FIREBASE STORAGE -----
 extension BaseAppHome {
     /**
      * Fetches data  (in this case, file uploads) located within Firebase Storage.
@@ -327,6 +383,7 @@ extension BaseAppHome {
         })
     }
     
+    
     /**
      * Deletes a file from Firebase Storage.
      *
@@ -352,11 +409,14 @@ extension BaseAppHome {
     }
 }
 
+// ---- SEARCH RESULTS -----
 /**
  * Updates search results as the user interacts with the search bar.
  */
 extension BaseAppHome: UISearchResultsUpdating {
-    
+    /**
+     * Filters the Files array to display those which satisfy the given (searchBar.text) predicate.
+     */
     func updateSearchResults(for searchController: UISearchController) {
         if let text = searchController.searchBar.text, !text.isEmpty {
             self.filteredFiles = self.files.filter({ (file) -> Bool in
