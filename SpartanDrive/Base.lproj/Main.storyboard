@@ -379,6 +379,7 @@
                     <connections>
                         <segue destination="kfp-EB-bc9" kind="show" identifier="showProfile" id="FUe-hU-ObE"/>
                         <segue destination="1OQ-BY-tqz" kind="show" identifier="loadFile" id="3OU-0Y-Crp"/>
+                        <segue destination="KiE-Aj-gap" kind="presentation" identifier="showFileDescription" id="oEz-d9-DJB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-8L-m4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -399,7 +400,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rj-ao-LDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5651" y="-1308"/>
+            <point key="canvasLocation" x="5667" y="-1009"/>
+        </scene>
+        <!--File Description-->
+        <scene sceneID="Vud-Jt-ORI">
+            <objects>
+                <viewController storyboardIdentifier="FileDescriptionVC" id="KiE-Aj-gap" customClass="FileDescription" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EfS-7g-968">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-U6-CGh">
+                                <rect key="frame" x="20" y="20" width="374" height="46"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iad-7Q-8ed">
+                                <rect key="frame" x="87" y="357" width="240" height="128"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itl-SJ-PKM">
+                                <rect key="frame" x="345" y="20" width="49" height="47"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" image="checkmark.circle" catalog="system">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="29" scale="medium"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="0Sp-hG-cU8" firstAttribute="trailing" secondItem="Iad-7Q-8ed" secondAttribute="trailing" constant="87" id="2tf-ZZ-mkC"/>
+                            <constraint firstItem="Itl-SJ-PKM" firstAttribute="top" secondItem="0Sp-hG-cU8" secondAttribute="top" constant="20" id="FGK-19-f1K"/>
+                            <constraint firstItem="0Sp-hG-cU8" firstAttribute="bottom" secondItem="xl1-U6-CGh" secondAttribute="bottom" constant="742" id="LOZ-LS-yzf"/>
+                            <constraint firstItem="xl1-U6-CGh" firstAttribute="top" secondItem="0Sp-hG-cU8" secondAttribute="top" constant="20" id="UCB-um-qpf"/>
+                            <constraint firstItem="Iad-7Q-8ed" firstAttribute="top" secondItem="0Sp-hG-cU8" secondAttribute="top" constant="357" id="UCz-by-XGI"/>
+                            <constraint firstItem="Itl-SJ-PKM" firstAttribute="leading" secondItem="0Sp-hG-cU8" secondAttribute="leading" constant="345" id="VOp-mL-RTD"/>
+                            <constraint firstItem="0Sp-hG-cU8" firstAttribute="bottom" secondItem="Itl-SJ-PKM" secondAttribute="bottom" constant="741" id="Vij-Ci-WDs"/>
+                            <constraint firstItem="0Sp-hG-cU8" firstAttribute="bottom" secondItem="Iad-7Q-8ed" secondAttribute="bottom" constant="323" id="Wn6-Zk-OBR"/>
+                            <constraint firstItem="Iad-7Q-8ed" firstAttribute="leading" secondItem="0Sp-hG-cU8" secondAttribute="leading" constant="87" id="bVg-oz-hEk"/>
+                            <constraint firstItem="xl1-U6-CGh" firstAttribute="leading" secondItem="0Sp-hG-cU8" secondAttribute="leading" constant="20" id="cA1-qe-e6j"/>
+                            <constraint firstItem="0Sp-hG-cU8" firstAttribute="trailing" secondItem="xl1-U6-CGh" secondAttribute="trailing" constant="20" id="nud-Lh-ALU"/>
+                            <constraint firstItem="0Sp-hG-cU8" firstAttribute="trailing" secondItem="Itl-SJ-PKM" secondAttribute="trailing" constant="20" id="v1B-vT-I2n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="0Sp-hG-cU8"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="uPT-pU-8KX"/>
+                    <connections>
+                        <outlet property="fileDescriptionField" destination="Iad-7Q-8ed" id="Qs6-UD-eZE"/>
+                        <outlet property="saveFileDescription" destination="Itl-SJ-PKM" id="Ev2-jr-Guj"/>
+                        <outlet property="tappableView" destination="EfS-7g-968" id="lFV-cD-gx1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H7S-Zy-dY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5666.666666666667" y="-1740.4017857142856"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Uk1-hV-OjZ">
@@ -522,7 +582,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4C-Ls-gbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5652" y="-629"/>
+            <point key="canvasLocation" x="5596" y="-183"/>
         </scene>
         <!--App Home Tab Bar-->
         <scene sceneID="d0B-74-aFE">
@@ -588,4 +648,7 @@
             <point key="canvasLocation" x="-920.28985507246387" y="5.3571428571428568"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="checkmark.circle" catalog="system" width="128" height="121"/>
+    </resources>
 </document>
