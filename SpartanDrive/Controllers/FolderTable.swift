@@ -139,7 +139,7 @@ class FolderTable: UIViewController {
                 self.tableView.reloadData()
             }))
             promptFolderTitle.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (_) in
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
             }))
             
             present(promptFolderTitle, animated: true, completion: nil)
@@ -215,7 +215,7 @@ class FolderTable: UIViewController {
             // for folders, we must first get the name of each file from Firebase since the files in a folder only exist upon instantiation of the FolderTable
             // view controller.
             let fileStorage = FileStorage()
-            let storageRef = fileStorage.storageRef.child("users/" + "\(self.currentUserUIDPath!)/" + "\(self.folderName)" + "\(self.folders[fileIndexPath.row].name)")
+            let storageRef = fileStorage.storageRef.child("users/" + "\(self.currentUserUIDPath!)/" + "\(self.folderName)/" + "\(self.folders[fileIndexPath.row].name)")
             
             var recipientUID: String!
             docRef.getDocument(completion: { (document, error) in
@@ -261,7 +261,6 @@ class FolderTable: UIViewController {
         if indexPath.section == 0 {
             let fileStorage = FileStorage()
             let recipient = UserDefaults.standard.value(forKey: "\(self.folderName)/" + "\(self.files[indexPath.row].name) shared with")
-            
             let db = Firestore.firestore()
             let docRef = db.collection("users").document((recipient as? String)!)
             
@@ -459,7 +458,19 @@ extension FolderTable: UITableViewDelegate, UITableViewDataSource {
                     self.shareFile(recipientEmail: recipientEmail, fileIndexPath: indexPath)
                 }))
                 promptRecipient.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (_) in
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
+                } ))
+                self.present(promptRecipient, animated: true, completion: nil)
+            }
+            else {
+                let promptRecipient = UIAlertController(title: "Share Folder", message: "Please provide the recipient's SpartanDrive registered email.", preferredStyle: .alert)
+                promptRecipient.addTextField(configurationHandler: nil)
+                promptRecipient.addAction(UIAlertAction(title: "Send", style: .default, handler: { [weak promptRecipient] (_) in
+                    let recipientEmail = promptRecipient!.textFields![0].text!
+                    self.shareFile(recipientEmail: recipientEmail, fileIndexPath: indexPath)
+                }))
+                promptRecipient.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (_) in
+                    //self.dismiss(animated: true, completion: nil)
                 } ))
                 self.present(promptRecipient, animated: true, completion: nil)
             }
@@ -477,11 +488,17 @@ extension FolderTable: UITableViewDelegate, UITableViewDataSource {
                 else {
                     let alert = UIAlertController(title: "Error", message: "Cannot unshare a file that was never shared.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-                        self.dismiss(animated: true, completion: nil)
+                        //self.dismiss(animated: true, completion: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
-                
+            }
+            else {
+                let alert = UIAlertController(title: "Error", message: "Cannot unshare a folder.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
+                    //self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
             }
             completion(true)
         })

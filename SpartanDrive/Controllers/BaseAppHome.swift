@@ -243,7 +243,7 @@ class BaseAppHome: UIViewController {
                 self.tableView.reloadData()
             }))
             promptFolderTitle.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (_) in
-                self.dismiss(animated: true, completion: nil)
+                //self.dismiss(animated: true, completion: nil)
             }))
             
             present(promptFolderTitle, animated: true, completion: nil)
@@ -568,7 +568,7 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
                     self.shareFile(recipientEmail: recipientEmail, fileIndexPath: indexPath)
                 }))
                 promptRecipient.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (_) in
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                 } ))
                 self.present(promptRecipient, animated: true, completion: nil)
             }
@@ -580,7 +580,7 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
                     self.shareFile(recipientEmail: recipientEmail, fileIndexPath: indexPath)
                 }))
                 promptRecipient.addAction(UIAlertAction(title: "Cancel", style: .destructive, handler: { (_) in
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                 } ))
                 self.present(promptRecipient, animated: true, completion: nil)
             }
@@ -598,7 +598,7 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
                 else {
                     let alert = UIAlertController(title: "Error", message: "Cannot unshare a file that was never shared.", preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-                        self.dismiss(animated: true, completion: nil)
+                        //self.dismiss(animated: true, completion: nil)
                     }))
                     self.present(alert, animated: true, completion: nil)
                 }
@@ -606,7 +606,7 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
             else {
                 let alert = UIAlertController(title: "Error", message: "Cannot unshare a folder.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: { (_) in
-                    self.dismiss(animated: true, completion: nil)
+                    //self.dismiss(animated: true, completion: nil)
                 }))
                 self.present(alert, animated: true, completion: nil)
             }
