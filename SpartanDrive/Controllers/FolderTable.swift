@@ -23,6 +23,7 @@ class FolderTable: UIViewController {
     private var folderNames = [String]()
     private var storageUsed = Int64()
     private var indexOfFileToViewDescriptionOf: IndexPath!
+    public var backToPrevious: String = String()
     
     // current user info
     public var currentUserUIDPath: String!
@@ -33,6 +34,16 @@ class FolderTable: UIViewController {
     
     
     // FolderTable Methods
+    /**
+     * Used here to deselect the currently selected uitablecell/row when the WebView is popped off of the navigation stack.
+     */
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if let selectedRow = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectedRow, animated: true)
+        }
+    }
+    
     /**
     * Prepares the View elements as the app is loaded into memory.
     */
@@ -51,7 +62,7 @@ class FolderTable: UIViewController {
     * Configures this View's Navigation Buttons.
     */
     func configureNavigationButtons() {
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: self.singleFolderTitle, style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
         
@@ -394,6 +405,7 @@ extension FolderTable: UITableViewDelegate, UITableViewDataSource {
             guard let destination = self.storyboard?.instantiateViewController(withIdentifier: "FolderTableVC") as? FolderTable else { return }
             // assign some of the properties of the destination's view
             destination.folderName = self.folderName + "/" + self.folders[indexPath.row].name // infinite concatenation
+            destination.backToPrevious = self.folderName
             destination.singleFolderTitle = self.folders[indexPath.row].name
             destination.currentUserUIDPath = self.currentUserUIDPath
             self.navigationController?.pushViewController(destination, animated: true)

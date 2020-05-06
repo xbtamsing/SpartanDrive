@@ -78,7 +78,7 @@ class BaseAppHome: UIViewController {
      */
     func configureNavigationButtons() {
         // the navigation's back button
-        let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
+        let backButton = UIBarButtonItem(title: "Home", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
         self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
         
