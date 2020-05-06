@@ -76,14 +76,9 @@ class Profile: UIViewController {
         self.currentUser.userEmail = self.getCurrentUser()
         self.currentUserLabel.text = "Logged in as \(self.currentUser.userEmail)"
         self.filesOwned.text = "Files Owned: \(self.currentUser.filesOwned)"
-        let totalStorage: Int64 = {
-            var total: Int64 = 0
-            for file in 0..<self.currentUser.storageUsed.count {
-                total += self.currentUser.storageUsed[file]
-            }
-            return total
-        }()
-        self.totalStorageUsed.text = "Total Storage Space Used: \(totalStorage) bytes"
+        self.foldersOwned.text = "Folders Owned: \(self.currentUser.foldersOwned)"
+        
+        self.totalStorageUsed.text = "Total Storage Space Used: \(currentUser.storageUsed) bytes"
         
     }
     

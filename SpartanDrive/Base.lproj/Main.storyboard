@@ -380,6 +380,7 @@
                         <segue destination="kfp-EB-bc9" kind="show" identifier="showProfile" id="FUe-hU-ObE"/>
                         <segue destination="1OQ-BY-tqz" kind="show" identifier="loadFile" id="3OU-0Y-Crp"/>
                         <segue destination="KiE-Aj-gap" kind="presentation" identifier="showFileDescription" id="oEz-d9-DJB"/>
+                        <segue destination="Z8b-Y9-jv9" kind="show" identifier="showFolder" id="t1c-L2-YVC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aJL-8L-m4u" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -400,7 +401,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rj-ao-LDz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5667" y="-1009"/>
+            <point key="canvasLocation" x="5841" y="-496"/>
+        </scene>
+        <!--Folder Table-->
+        <scene sceneID="D9J-Jt-RIg">
+            <objects>
+                <viewController storyboardIdentifier="FolderTableVC" id="Z8b-Y9-jv9" customClass="FolderTable" customModule="SpartanDrive" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="b2W-gU-mwy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="jlc-VL-SkT"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="jaZ-J8-Lhp"/>
+                    <connections>
+                        <segue destination="1OQ-BY-tqz" kind="show" identifier="loadFile" id="Msd-ub-HDi"/>
+                        <segue destination="KiE-Aj-gap" kind="presentation" identifier="showDescription" id="GWc-b2-SN4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9v0-aI-mMg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5841" y="-1280"/>
         </scene>
         <!--File Description-->
         <scene sceneID="Vud-Jt-ORI">
@@ -410,7 +431,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="File Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-U6-CGh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl1-U6-CGh">
                                 <rect key="frame" x="20" y="20" width="374" height="46"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="34"/>
                                 <nil key="textColor"/>
@@ -459,7 +480,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H7S-Zy-dY3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5666.666666666667" y="-1740.4017857142856"/>
+            <point key="canvasLocation" x="5835" y="-2028"/>
         </scene>
         <!--Profile-->
         <scene sceneID="Uk1-hV-OjZ">
@@ -582,7 +603,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m4C-Ls-gbO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5596" y="-183"/>
+            <point key="canvasLocation" x="5835" y="435"/>
         </scene>
         <!--App Home Tab Bar-->
         <scene sceneID="d0B-74-aFE">
@@ -592,7 +613,6 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="LZl-jC-Ch1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" white="0.0" alpha="0.50123073626712333" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <outlet property="tab" destination="LZl-jC-Ch1" id="i4k-ej-L4J"/>
@@ -648,6 +668,10 @@
             <point key="canvasLocation" x="-920.28985507246387" y="5.3571428571428568"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="oEz-d9-DJB"/>
+        <segue reference="3OU-0Y-Crp"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
     </resources>

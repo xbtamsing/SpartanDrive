@@ -28,7 +28,8 @@ class AppHomeTabBar: UITabBarController {
      * Sets the styling for the Application Home's Tab Bar.
      */
     func setTabBarStyling() {
-        self.tab.tintColor = #colorLiteral(red: 0.8980392157, green: 0.6588235294, blue: 0.137254902, alpha: 1)
+        //self.tab.tintColor = #colorLiteral(red: 0.8980392157, green: 0.6588235294, blue: 0.137254902, alpha: 1)
+        self.tab.tintColor = .black
     }
     
 }

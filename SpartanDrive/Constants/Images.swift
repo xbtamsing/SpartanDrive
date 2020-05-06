@@ -12,9 +12,10 @@ import UIKit
  */
 struct Images {
     // for all of the currently accepted file types.
-    static let doc = UIImage(named: "doc")!
-    static let ppt = UIImage(named: "ppt")!
-    static let pdf = UIImage(named: "pdf")!
-    static let xls = UIImage(named: "xls")!
+    static let doc    = UIImage(named: "doc")!
+    static let ppt    = UIImage(named: "ppt")!
+    static let pdf    = UIImage(named: "pdf")!
+    static let xls    = UIImage(named: "xls")!
+    static let folder = UIImage(named: "folder")!
     
 }

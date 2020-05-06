@@ -9,13 +9,13 @@
 import UIKit
 
 /**
- * Manages a User's File description.
+ * Manages a User's File/Folder description.
  */
 class FileDescription: UIViewController {
     
     // FileDescription Propeties
     @IBOutlet weak var fileDescriptionField: UITextView!
-    public var fileName: String!
+    public var name: String!
     public var check: Bool! = false
     private var savedDescription: String! = String()
     @IBOutlet var tappableView: UIView! {
@@ -43,8 +43,8 @@ class FileDescription: UIViewController {
         self.fileDescriptionField.delegate = self
         
         // a practical solution for now, at least.
-        if UserDefaults.standard.bool(forKey: "\(String(describing: self.fileName)) has changed desc") {
-            self.fileDescriptionField.text = UserDefaults.standard.value(forKey: (self.fileName)) as? String
+        if UserDefaults.standard.bool(forKey: "\(String(describing: self.name)) has changed desc") {
+            self.fileDescriptionField.text = UserDefaults.standard.value(forKey: (self.name)) as? String
         }
         else {
             self.fileDescriptionField.text = "Enter a file description here."
@@ -77,9 +77,10 @@ class FileDescription: UIViewController {
     @objc func handleSaveFileDescriptionTapGesture() {
         if self.saveFileDescription.gestureRecognizers![0].state
             == .ended {
+            self.fileDescriptionField.resignFirstResponder()
             // save the user's file description to UserDefaults.
-            UserDefaults.standard.set(self.savedDescription, forKey: self.fileName)
-            UserDefaults.standard.set(true, forKey: "\(String(describing: self.fileName)) has changed desc")
+            UserDefaults.standard.set(self.savedDescription, forKey: self.name)
+            UserDefaults.standard.set(true, forKey: "\(String(describing: self.name)) has changed desc")
         }
     }
 }
