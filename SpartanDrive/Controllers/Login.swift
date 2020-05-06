@@ -198,7 +198,7 @@ class Login: UIViewController, UITextFieldDelegate {
      */
     func presentHomeView() {
         // upon a successful login, go to the app's homepage.
-        guard let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "AppHomeTabBarViewController") as? AppHomeTabBar else { return }
+        guard let destinationViewController = self.storyboard?.instantiateViewController(withIdentifier: "AppHomeNavigationViewController") as? AppHomeNav else { return }
         destinationViewController.modalPresentationStyle = .fullScreen
         self.present(destinationViewController, animated: true, completion: nil)
     }

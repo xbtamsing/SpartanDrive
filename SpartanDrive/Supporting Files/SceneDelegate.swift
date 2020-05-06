@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // controls which View gets shown on app launch. depends on a User's logged in status stored within the UserDefaults.
         if UserDefaults.standard.isLoggedIn() {
-            guard let destinationViewController = storyboard.instantiateViewController(withIdentifier: "AppHomeTabBarViewController") as? AppHomeTabBar
+            guard let destinationViewController = storyboard.instantiateViewController(withIdentifier: "AppHomeNavigationViewController") as? AppHomeNav
                 else { return }
             self.window?.rootViewController = destinationViewController
         }
