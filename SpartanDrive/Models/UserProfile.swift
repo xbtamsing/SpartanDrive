@@ -17,7 +17,7 @@ struct UserProfile {
     public var userEmail = String()
     public var filesOwned = Int()
     public var foldersOwned = Int()
-    public var storageUsed = [Int64]()
+    public var storageUsed = Int64()
     // potentially more later...
     
 }

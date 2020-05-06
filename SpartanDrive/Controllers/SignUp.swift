@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseFirestore
 
 class SignUp: UIViewController, UITextFieldDelegate {
     
@@ -180,6 +181,23 @@ class SignUp: UIViewController, UITextFieldDelegate {
                 self.signUp(email: self.userEmail, password: self.userPassword, signUpHandler: { (result, error) in
                     if error != nil {
                         self.error = true
+                    }
+                    else {
+                        // store user info in the database
+                        let db = Firestore.firestore()
+                        if let user = Auth.auth().currentUser {
+                            let uid = user.uid  // user id, used as the only key-value pair atm.
+                            db.collection("users").document(self.userEmail).setData([
+                                "uid": uid
+                            ]) { err in
+                                if let err = err {
+                                    print("Could not write user info to the database. Error: \(err)")
+                                }
+                                else {
+                                    print("Document successfully written to the database.")
+                                }
+                            }
+                        }
                     }
                 })
             }

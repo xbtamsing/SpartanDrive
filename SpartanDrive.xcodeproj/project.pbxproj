@@ -16,10 +16,13 @@
 		091A26C22405E36300D0F848 /* SpartanDriveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26C12405E36300D0F848 /* SpartanDriveTests.swift */; };
 		091A26CD2405E36300D0F848 /* SpartanDriveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 091A26CC2405E36300D0F848 /* SpartanDriveUITests.swift */; };
 		091A26DD2405E6FB00D0F848 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 091A26DC2405E6FB00D0F848 /* CloudKit.framework */; };
+		270A748B24613B3C0005C938 /* FolderTable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 270A748A24613B3C0005C938 /* FolderTable.swift */; };
 		2718203B2456D00200A3CB8D /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718203A2456D00200A3CB8D /* Profile.swift */; };
 		2718203D2456DA2400A3CB8D /* AppHomeTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718203C2456DA2400A3CB8D /* AppHomeTabBar.swift */; };
 		2718203F2456DAE100A3CB8D /* AppHomeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2718203E2456DAE100A3CB8D /* AppHomeNav.swift */; };
 		271820412456E89000A3CB8D /* BaseAppHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 271820402456E89000A3CB8D /* BaseAppHome.swift */; };
+		274C5B39245ED067007DFDF4 /* Folder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274C5B38245ED067007DFDF4 /* Folder.swift */; };
+		274C5B3B245ED15F007DFDF4 /* FolderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274C5B3A245ED15F007DFDF4 /* FolderCell.swift */; };
 		2766D2D82457841300AC5621 /* WelcomeNav.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2766D2D72457841300AC5621 /* WelcomeNav.swift */; };
 		276AFDF824554C6D0059AD30 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276AFDF724554C6D0059AD30 /* SignUp.swift */; };
 		276AFDFA2455792A0059AD30 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 276AFDF92455792A0059AD30 /* Login.swift */; };
@@ -74,10 +77,13 @@
 		091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SpartanDrive.entitlements; sourceTree = "<group>"; };
 		091A26DC2405E6FB00D0F848 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		1BFB8CED86CD9D0882324F38 /* Pods-SpartanDrive.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpartanDrive.release.xcconfig"; path = "Target Support Files/Pods-SpartanDrive/Pods-SpartanDrive.release.xcconfig"; sourceTree = "<group>"; };
+		270A748A24613B3C0005C938 /* FolderTable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTable.swift; sourceTree = "<group>"; };
 		2718203A2456D00200A3CB8D /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		2718203C2456DA2400A3CB8D /* AppHomeTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeTabBar.swift; sourceTree = "<group>"; };
 		2718203E2456DAE100A3CB8D /* AppHomeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppHomeNav.swift; sourceTree = "<group>"; };
 		271820402456E89000A3CB8D /* BaseAppHome.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseAppHome.swift; sourceTree = "<group>"; };
+		274C5B38245ED067007DFDF4 /* Folder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Folder.swift; sourceTree = "<group>"; };
+		274C5B3A245ED15F007DFDF4 /* FolderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderCell.swift; sourceTree = "<group>"; };
 		2766D2D72457841300AC5621 /* WelcomeNav.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeNav.swift; sourceTree = "<group>"; };
 		276AFDF724554C6D0059AD30 /* SignUp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		276AFDF92455792A0059AD30 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
@@ -166,6 +172,7 @@
 				091A26B82405E36300D0F848 /* Info.plist */,
 				091A26DA2405E6F900D0F848 /* SpartanDrive.entitlements */,
 				27D52EB8245BD33B0084D958 /* FileCell.swift */,
+				274C5B3A245ED15F007DFDF4 /* FolderCell.swift */,
 				27D52EB5245BCD2C0084D958 /* Utilities */,
 				27D52EB2245BCA0F0084D958 /* Supporting Files */,
 			);
@@ -213,6 +220,7 @@
 				2766D2D72457841300AC5621 /* WelcomeNav.swift */,
 				27D52EC0245D6F180084D958 /* WebView.swift */,
 				27D52EC2245E31C70084D958 /* FileDescription.swift */,
+				270A748A24613B3C0005C938 /* FolderTable.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -221,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				27E15E66245995240087FF23 /* File.swift */,
+				274C5B38245ED067007DFDF4 /* Folder.swift */,
 				27BF0A4E24592B070066651C /* FileStorage.swift */,
 				27BF0A5224593CE20066651C /* UserProfile.swift */,
 			);
@@ -553,6 +562,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				276AFDF824554C6D0059AD30 /* SignUp.swift in Sources */,
+				270A748B24613B3C0005C938 /* FolderTable.swift in Sources */,
 				27D52EB9245BD33B0084D958 /* FileCell.swift in Sources */,
 				276AFDFA2455792A0059AD30 /* Login.swift in Sources */,
 				27BF0A5324593CE20066651C /* UserProfile.swift in Sources */,
@@ -565,6 +575,7 @@
 				2718203D2456DA2400A3CB8D /* AppHomeTabBar.swift in Sources */,
 				27BF0A4F24592B070066651C /* FileStorage.swift in Sources */,
 				27EA948F2436636E00E1B528 /* User.swift in Sources */,
+				274C5B3B245ED15F007DFDF4 /* FolderCell.swift in Sources */,
 				27CD46922456204D0099DAFF /* UserDefaults.swift in Sources */,
 				27D52EC1245D6F180084D958 /* WebView.swift in Sources */,
 				27D52EBD245D51D80084D958 /* Images.swift in Sources */,
@@ -572,6 +583,7 @@
 				271820412456E89000A3CB8D /* BaseAppHome.swift in Sources */,
 				2766D2D82457841300AC5621 /* WelcomeNav.swift in Sources */,
 				091A26AD2405E36100D0F848 /* SceneDelegate.swift in Sources */,
+				274C5B39245ED067007DFDF4 /* Folder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -750,6 +762,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = SpartanDrive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -772,6 +785,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6WA6Y7KBQJ;
 				INFOPLIST_FILE = SpartanDrive/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
