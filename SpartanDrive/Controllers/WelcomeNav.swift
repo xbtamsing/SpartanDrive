@@ -27,7 +27,6 @@ class WelcomeNav: UIViewController {
     func configureLeftNavigationButton() {
         let backButton = UIBarButtonItem(title: "", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
-<<<<<<< HEAD
         self.navigationItem.backBarButtonItem?.tintColor = UIColor { tc in
             switch tc.userInterfaceStyle {
             case .dark:
@@ -36,8 +35,5 @@ class WelcomeNav: UIViewController {
                 return UIColor.black
             }
         }
-=======
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
     }
 }

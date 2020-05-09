@@ -5,13 +5,9 @@
 	<key>aps-environment</key>
 	<string>development</string>
 	<key>com.apple.developer.icloud-container-identifiers</key>
-<<<<<<< HEAD
 	<array>
 		<string>iCloud.edu.SJSU.CMPE137.SpartanDrive.Group5</string>
 	</array>
-=======
-	<array/>
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
 	<key>com.apple.developer.icloud-services</key>
 	<array>
 		<string>CloudKit</string>

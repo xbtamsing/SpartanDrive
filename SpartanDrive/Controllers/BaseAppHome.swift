@@ -13,10 +13,6 @@ import FirebaseStorage
 import FirebaseFirestore
 import MobileCoreServices
 import MessageUI
-<<<<<<< HEAD
-=======
-import UserNotifications
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
 
 class BaseAppHome: UIViewController {
     
@@ -25,10 +21,7 @@ class BaseAppHome: UIViewController {
     private var uploadFileButton: UIButton! = UIButton(type: .system)
     private var createFolderButton: UIButton! = UIButton(type: .system)
     public var currentUser: UserProfile = UserProfile()
-<<<<<<< HEAD
     private var totalBytesUsed: Int = 0
-=======
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
     private var currentUserUIDPath: String = String()
     private var indexOfFileToViewDescriptionOf: IndexPath!
     
@@ -88,7 +81,6 @@ class BaseAppHome: UIViewController {
         // the navigation's back button
         let backButton = UIBarButtonItem(title: "Home", style: UIBarButtonItem.Style.plain, target: nil, action: nil)
         self.navigationItem.backBarButtonItem = backButton
-<<<<<<< HEAD
         self.navigationItem.backBarButtonItem?.tintColor = UIColor { tc in
             switch tc.userInterfaceStyle {
             case .dark:
@@ -97,9 +89,6 @@ class BaseAppHome: UIViewController {
                 return UIColor.black
             }
         }
-=======
-        self.navigationItem.backBarButtonItem?.tintColor = UIColor.black
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         
         // gesture recognizers
         let profileRecognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleProfileTapGesture))
@@ -117,7 +106,6 @@ class BaseAppHome: UIViewController {
         
         self.userProfileButton.setImage(profileButtonImage, for: .normal)
         self.userProfileButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
-<<<<<<< HEAD
         self.userProfileButton.tintColor = UIColor { tc in
             switch tc.userInterfaceStyle {
             case .dark:
@@ -126,16 +114,12 @@ class BaseAppHome: UIViewController {
                 return UIColor.black
             }
         }
-=======
-        self.userProfileButton.tintColor = UIColor.black
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: userProfileButton)
         
         // upload button and create folder button config & assignment
         let uploadConfigSize = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
         
         self.uploadFileButton.setBackgroundImage(UIImage(systemName: "arrow.up.doc", withConfiguration: uploadConfigSize), for: .normal)
-<<<<<<< HEAD
         self.uploadFileButton.tintColor = UIColor { tc in
             switch tc.userInterfaceStyle {
             case .dark:
@@ -144,15 +128,11 @@ class BaseAppHome: UIViewController {
                 return UIColor.black
             }
         }
-=======
-        self.uploadFileButton.tintColor = .black
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         self.uploadFileButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         
         let createFolderConfigSize = UIImage.SymbolConfiguration(pointSize: 20, weight: .regular, scale: .large)
         
         self.createFolderButton.setBackgroundImage(UIImage(systemName: "folder.badge.plus", withConfiguration: createFolderConfigSize), for: .normal)
-<<<<<<< HEAD
         self.createFolderButton.tintColor = UIColor { tc in
             switch tc.userInterfaceStyle {
             case .dark:
@@ -161,9 +141,6 @@ class BaseAppHome: UIViewController {
                 return UIColor.black
             }
         }
-=======
-        self.createFolderButton.tintColor = .black
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         self.createFolderButton.frame = CGRect(x: 0, y: 0, width: 25, height: 25)
         
         self.navigationItem.rightBarButtonItems = [UIBarButtonItem(customView: self.uploadFileButton), UIBarButtonItem(customView: self.createFolderButton)]
@@ -319,7 +296,6 @@ class BaseAppHome: UIViewController {
      */
     func shareFile(recipientEmail: String, fileIndexPath: IndexPath) {
         
-<<<<<<< HEAD
         if fileIndexPath.section == 0 {
             let nameOfFileToBeShared = self.files[fileIndexPath.row].name
             let pathOfFile = self.files[fileIndexPath.row].fullPath
@@ -357,54 +333,6 @@ class BaseAppHome: UIViewController {
                 
             }
             
-=======
-        let content = UNMutableNotificationContent()
-        content.body = "\(recipientEmail)"
-        content.sound = UNNotificationSound.default
-                
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "sharedFile", content: content, trigger: trigger)
-        
-
-        if fileIndexPath.section == 0 {
-            let nameOfFileToBeShared = self.files[fileIndexPath.row].name
-            
-            let appBundleID = Bundle.main.bundleIdentifier!
-            let temp = NSTemporaryDirectory()
-            let appPath = "file://" + temp + appBundleID + "-Inbox"
-            
-            let localFileURL = URL(string: appPath + "/" + nameOfFileToBeShared)!
-            
-            let db = Firestore.firestore()
-            let docRef = db.collection("users").document(recipientEmail)
-            
-            docRef.getDocument(completion: { (document, error) in
-                if let document = document {
-                    let recipientUID = (document.get("uid") as? String)!
-                    let fileStorage = FileStorage()
-                    let uploadRef = fileStorage.storageRef.child("users/" + "\(recipientUID)" + "/" + nameOfFileToBeShared)
-                    uploadRef.putFile(from: localFileURL, metadata: nil, completion: { (metadata, error) in
-                        guard metadata != nil else {
-                            print("File upload error!!")
-                            return
-                        }
-                        let alert = UIAlertController(title: "Status", message: "File successfully shared with \(recipientEmail)!", preferredStyle: .alert)
-                        content.title = "File Shared"
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
-                        alert.addAction(UIAlertAction(title: "Okay!", style: .default, handler: nil))
-                        self.present(alert, animated: true, completion: nil)
-                        
-                        UserDefaults.standard.set(true, forKey: "\(self.files[fileIndexPath.row].name) has been shared")
-                        UserDefaults.standard.set(recipientEmail, forKey: "\(self.files[fileIndexPath.row].name) shared with")
-                    })
-                }
-                else {
-                    print("Could not retrieve the recipient's userID. Error: \(String(describing: error))")
-                }
-            })
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         }
         else {
             
@@ -426,11 +354,7 @@ class BaseAppHome: UIViewController {
             docRef.getDocument(completion: { (document, error) in
                 if let document = document {
                     recipientUID = (document.get("uid") as? String)
-<<<<<<< HEAD
                     print(recipientUID!)
-=======
-//                    print(recipientUID!)
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                     storageRef.listAll(completion: { (result, error) in
                         if let error = error {
                             print(error)
@@ -467,18 +391,6 @@ class BaseAppHome: UIViewController {
      * Unshares a file resource with another registered SpartanDrive user.
      */
     func unshareFile(fileName: String, indexPath: IndexPath) {
-<<<<<<< HEAD
-=======
-        let content = UNMutableNotificationContent()
-        content.body = "\(fileName)"
-        content.sound = UNNotificationSound.default
-                
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "sharedFile", content: content, trigger: trigger)
-        
-        
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         if indexPath.section == 0 {
             let fileStorage = FileStorage()
             let recipient = UserDefaults.standard.value(forKey: "\(self.files[indexPath.row].name) shared with")
@@ -499,11 +411,6 @@ class BaseAppHome: UIViewController {
                             // alert on file successfully unshared
                             let alert = UIAlertController(title: "Status", message: "File has been unshared.", preferredStyle: .alert)
                             let action = UIAlertAction(title: "Okay!", style: .cancel, handler: nil)
-<<<<<<< HEAD
-=======
-                            content.title = "File Unshared"
-                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
                             UserDefaults.standard.set(false, forKey: "\(self.files[indexPath.row].name) has been shared")
@@ -658,13 +565,8 @@ extension BaseAppHome: UITableViewDelegate, UITableViewDataSource {
         let deleteRow = UIContextualAction(style: .normal, title: "Delete", handler: { (action, view, completion) in
             if indexPath.section == 0 {
                 
-<<<<<<< HEAD
                 let file = self.files[indexPath.row]
                 self.deleteFileFromStorage(filePath: file.name, fileSizeInBytes: file.sizeInBytes, section: indexPath.section)
-=======
-                self.deleteFileFromStorage(filePath: self.files[indexPath.row].name, fileSizeAtIndex: indexPath.row, section: indexPath.section)
-                
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                 // reset the file's description in the event that it is deleted (and maybe even re-uploaded). the desc won't reset properly, however, for some weird reason w/o this key being hardcoded in. removing the object from UserDefaults does not work either.
                 UserDefaults.standard.set("Enter a file description here.", forKey: self.files[indexPath.row].name)
                 UserDefaults.standard.set(false, forKey: "\(String(describing: self.files[indexPath.row])) has changed desc")
@@ -765,10 +667,7 @@ extension BaseAppHome {
             for item in result.items {
                 // obtaining for use in the file/filecell instantiation
                 let fileName = item.name
-<<<<<<< HEAD
                 let filePath = item.fullPath
-=======
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                 var stringOfFileSize = String()
                 
                 
@@ -783,7 +682,6 @@ extension BaseAppHome {
                             self.storageUsed += fileSizeInBytes!
                             stringOfFileSize = String("Size: \(fileSizeInBytes) bytes")
                         }
-<<<<<<< HEAD
                         
                         let icon: UIImage = {
                             let fileSubstrings = fileName.split(separator: ".")
@@ -812,36 +710,6 @@ extension BaseAppHome {
                     }
                 })
                 
-=======
-                    }
-                })
-                
-                
-                let icon: UIImage = {
-                    let fileSubstrings = fileName.split(separator: ".")
-                    let fileExtension = fileSubstrings[fileSubstrings.count - 1]
-                    switch fileExtension {
-                    case "txt":     return Images.doc
-                    case "docx":    return Images.doc
-                    case "xlsx":    return Images.xls
-                    case "pptx":    return Images.ppt
-                    case "pdf":     return Images.pdf
-                    default: return UIImage()
-                    }
-                }()
-                // construct an instance of a File for this current file
-                let file = File(icon: icon, name: fileName, size: stringOfFileSize)
-                
-                let containsDuplicate = self.files.contains(where: { (file) -> Bool in
-                    file.name == fileName
-                })
-                
-                if !containsDuplicate {
-                    self.files.append(file)
-                }
-                
-                self.tableView.reloadData()
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
             }
         })
     }
@@ -867,34 +735,22 @@ extension BaseAppHome {
      *
      * Called when a table row is deleted.
      */
-<<<<<<< HEAD
     func deleteFileFromStorage(filePath: String, fileSizeInBytes: Int, section: Int) {
-=======
-    func deleteFileFromStorage(filePath: String, fileSizeAtIndex: Int, section: Int) {
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
         let fileStorage = FileStorage()
         
         // ...
         
         if section == 0 {
             let removalRef = fileStorage.storageRef.child("users/" + "\(self.currentUserUIDPath)" + "/" + "\(filePath)")
-<<<<<<< HEAD
                         
             removalRef.delete(completion: { [unowned self] (error) in
-=======
-            
-            removalRef.delete(completion: { (error) in
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                 if let error = error {
                     print(error)
                 }
                 else {
                     // alert on file delete completed
                     let alert = UIAlertController(title: "Status", message: "File deleted successfully.", preferredStyle: .alert)
-<<<<<<< HEAD
                     self.storageUsed -= Int64(fileSizeInBytes)
-=======
->>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                     let action = UIAlertAction(title: "Okay!", style: .cancel, handler: nil)
                     alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
