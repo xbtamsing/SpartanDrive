@@ -6,7 +6,11 @@ Designed with the intent of streamlining file accessibility and management for s
 # Built With
 
 * [Swift](https://developer.apple.com/swift/) - *a powerful and intuitive programming language for macOS, iOS, watchOS, tvOS, and beyond.*
+<<<<<<< HEAD
 * [Firebase](https://firebase.google.com) - *a comprehensive app development platform, providing an end-to-end identity authentication solution, secure Cloud Storage, and a flexible NoSQL cloud database .*
+=======
+* [Firebase](https://firebase.google.com) - *a comprehensive app development platform, providing an end-to-end identity authentication solution, secure Cloud Storage, and a flexible NoSQL cloud database.*
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
 
 # Authors, *Initial Work*
 

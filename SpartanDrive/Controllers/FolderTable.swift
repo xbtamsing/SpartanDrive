@@ -436,8 +436,12 @@ extension FolderTable: UITableViewDelegate, UITableViewDataSource {
         let deleteRow = UIContextualAction(style: .normal, title: "Delete", handler: { (action, view, completion) in
             if indexPath.section == 0 {
                 
+<<<<<<< HEAD
                 let file = self.files[indexPath.row]
                 self.deleteFileFromStorage(filePath: file.name, fileSizeAtIndex: file.sizeInBytes, section: indexPath.section)
+=======
+                self.deleteFileFromStorage(filePath: self.files[indexPath.row].name, fileSizeAtIndex: indexPath.row, section: indexPath.section)
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                 
                 // reset the file's description in the event that it is deleted (and maybe even re-uploaded). the desc won't reset properly, however, for some weird reason w/o this key being hardcoded in. removing the object from UserDefaults does not work either.
                 UserDefaults.standard.set("Enter a file description here.", forKey: self.files[indexPath.row].name)
@@ -538,7 +542,10 @@ extension FolderTable {
            for item in result.items {
                // obtaining for use in the file/filecell instantiation
                let fileName = item.name
+<<<<<<< HEAD
             let filePath = item.fullPath
+=======
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                var stringOfFileSize = String()
                
                 var fileSizeInBytes: Int64? = Int64()
@@ -568,7 +575,11 @@ extension FolderTable {
                    }
                }()
                // construct an instance of a File for this current file
+<<<<<<< HEAD
             let file = File(icon: icon, name: fileName, size: stringOfFileSize, sizeInBytes: Int(fileSizeInBytes!), fullPath: filePath)
+=======
+               let file = File(icon: icon, name: fileName, size: stringOfFileSize)
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                
                let containsDuplicate = self.files.contains(where: { (file) -> Bool in
                    file.name == fileName
@@ -618,7 +629,10 @@ extension FolderTable {
                     // alert on file delete completed
                     let alert = UIAlertController(title: "Status", message: "File deleted successfully.", preferredStyle: .alert)
                     let action = UIAlertAction(title: "Okay!", style: .cancel, handler: nil)
+<<<<<<< HEAD
                     
+=======
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                     alert.addAction(action)
                     self.present(alert, animated: true, completion: nil)
                 }

@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Wo-yK-Kgz">
+<<<<<<< HEAD
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
+=======
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -68,11 +72,19 @@
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome  to SpartanDrive." lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9GI-NR-ABv">
                                 <rect key="frame" x="57" y="259" width="300" height="84"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+<<<<<<< HEAD
                                 <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+=======
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                         <constraints>
                             <constraint firstItem="9GI-NR-ABv" firstAttribute="top" secondItem="Yvx-TO-1lo" secondAttribute="top" constant="112" id="LM0-aU-8m6"/>
                             <constraint firstItem="RZq-cs-pwT" firstAttribute="centerX" secondItem="bDf-XI-wrd" secondAttribute="centerX" id="UN4-Ah-YkE"/>
@@ -313,6 +325,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="bottom" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRk-Os-qbW">
                                 <rect key="frame" x="288" y="496.5" width="89" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -325,11 +338,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tRk-Os-qbW" firstAttribute="bottom" secondItem="OLg-p9-hSY" secondAttribute="bottom" constant="-5" id="Dj2-0B-fTQ"/>
+=======
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                             <constraint firstItem="pmU-i4-Ko3" firstAttribute="centerX" secondItem="jKx-XU-VB7" secondAttribute="centerX" id="R1t-ea-pHl"/>
                             <constraint firstItem="pmU-i4-Ko3" firstAttribute="centerY" secondItem="jKx-XU-VB7" secondAttribute="centerY" id="YTf-Zt-lND"/>
                             <constraint firstItem="yBq-7V-3k8" firstAttribute="top" secondItem="Cyx-Xf-nxd" secondAttribute="top" constant="469" id="a0Z-Vf-AtJ"/>
                             <constraint firstItem="yI1-jd-afS" firstAttribute="centerX" secondItem="jKx-XU-VB7" secondAttribute="centerX" id="ara-ww-Nkx"/>
+<<<<<<< HEAD
                             <constraint firstItem="tRk-Os-qbW" firstAttribute="trailing" secondItem="OLg-p9-hSY" secondAttribute="trailing" constant="-5" id="bSM-5q-AGN"/>
+=======
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                             <constraint firstItem="yI1-jd-afS" firstAttribute="leading" secondItem="Cyx-Xf-nxd" secondAttribute="leading" constant="57" id="bcd-Qf-INO"/>
                             <constraint firstItem="pmU-i4-Ko3" firstAttribute="leading" secondItem="Cyx-Xf-nxd" secondAttribute="leading" constant="32" id="c99-ny-A7J"/>
                             <constraint firstItem="Cyx-Xf-nxd" firstAttribute="bottom" secondItem="pmU-i4-Ko3" secondAttribute="bottom" constant="333.5" id="cTA-bh-UEr"/>
@@ -350,7 +371,10 @@
                         <outlet property="googleSignInButton" destination="yBq-7V-3k8" id="nTk-uY-Des"/>
                         <outlet property="login" destination="Flt-1R-jTF" id="48z-AY-2YT"/>
                         <outlet property="password" destination="OLg-p9-hSY" id="8X3-zh-imL"/>
+<<<<<<< HEAD
                         <outlet property="showHidePasswordButton" destination="tRk-Os-qbW" id="ov3-6K-ztI"/>
+=======
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                         <outlet property="tappableView" destination="jKx-XU-VB7" id="sKm-0c-O9O"/>
                     </connections>
                 </viewController>
@@ -505,7 +529,11 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SkK-Ch-fZB">
                                         <rect key="frame" x="0.0" y="0.0" width="300" height="40"/>
+<<<<<<< HEAD
                                         <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+=======
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="2NH-eV-XXQ"/>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="6n2-Hu-MHA"/>
@@ -645,8 +673,13 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+<<<<<<< HEAD
         <segue reference="GWc-b2-SN4"/>
         <segue reference="Msd-ub-HDi"/>
+=======
+        <segue reference="oEz-d9-DJB"/>
+        <segue reference="3OU-0Y-Crp"/>
+>>>>>>> 68ff8320d4f01097fbb7c506dac314760266eef0
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.circle" catalog="system" width="128" height="121"/>
