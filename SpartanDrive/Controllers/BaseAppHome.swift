@@ -13,7 +13,6 @@ import FirebaseStorage
 import FirebaseFirestore
 import MobileCoreServices
 import MessageUI
-import UserNotifications
 
 class BaseAppHome: UIViewController {
     
@@ -268,15 +267,6 @@ class BaseAppHome: UIViewController {
      */
     func shareFile(recipientEmail: String, fileIndexPath: IndexPath) {
         
-        let content = UNMutableNotificationContent()
-        content.body = "\(recipientEmail)"
-        content.sound = UNNotificationSound.default
-                
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "sharedFile", content: content, trigger: trigger)
-        
-
         if fileIndexPath.section == 0 {
             let nameOfFileToBeShared = self.files[fileIndexPath.row].name
             
@@ -292,6 +282,7 @@ class BaseAppHome: UIViewController {
             docRef.getDocument(completion: { (document, error) in
                 if let document = document {
                     let recipientUID = (document.get("uid") as? String)!
+                    
                     let fileStorage = FileStorage()
                     let uploadRef = fileStorage.storageRef.child("users/" + "\(recipientUID)" + "/" + nameOfFileToBeShared)
                     uploadRef.putFile(from: localFileURL, metadata: nil, completion: { (metadata, error) in
@@ -300,9 +291,6 @@ class BaseAppHome: UIViewController {
                             return
                         }
                         let alert = UIAlertController(title: "Status", message: "File successfully shared with \(recipientEmail)!", preferredStyle: .alert)
-                        content.title = "File Shared"
-                        UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
-
                         alert.addAction(UIAlertAction(title: "Okay!", style: .default, handler: nil))
                         self.present(alert, animated: true, completion: nil)
                         
@@ -335,7 +323,7 @@ class BaseAppHome: UIViewController {
             docRef.getDocument(completion: { (document, error) in
                 if let document = document {
                     recipientUID = (document.get("uid") as? String)
-//                    print(recipientUID!)
+                    print(recipientUID!)
                     storageRef.listAll(completion: { (result, error) in
                         if let error = error {
                             print(error)
@@ -372,15 +360,6 @@ class BaseAppHome: UIViewController {
      * Unshares a file resource with another registered SpartanDrive user.
      */
     func unshareFile(fileName: String, indexPath: IndexPath) {
-        let content = UNMutableNotificationContent()
-        content.body = "\(fileName)"
-        content.sound = UNNotificationSound.default
-                
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        
-        let request = UNNotificationRequest(identifier: "sharedFile", content: content, trigger: trigger)
-        
-        
         if indexPath.section == 0 {
             let fileStorage = FileStorage()
             let recipient = UserDefaults.standard.value(forKey: "\(self.files[indexPath.row].name) shared with")
@@ -401,8 +380,6 @@ class BaseAppHome: UIViewController {
                             // alert on file successfully unshared
                             let alert = UIAlertController(title: "Status", message: "File has been unshared.", preferredStyle: .alert)
                             let action = UIAlertAction(title: "Okay!", style: .cancel, handler: nil)
-                            content.title = "File Unshared"
-                            UNUserNotificationCenter.current().add(request, withCompletionHandler: nil)
                             alert.addAction(action)
                             self.present(alert, animated: true, completion: nil)
                             UserDefaults.standard.set(false, forKey: "\(self.files[indexPath.row].name) has been shared")
