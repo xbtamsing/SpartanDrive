@@ -15,7 +15,10 @@ class Login: UIViewController, UITextFieldDelegate {
     // Login Properties --------------------------------------------------------------------------------------------------
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var password: UITextField!
+<<<<<<< HEAD
     @IBOutlet weak var showHidePasswordButton: UIButton!
+=======
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
     @IBOutlet weak var login: UIButton! {
         didSet {
             let recognizer = UITapGestureRecognizer(target: self, action: #selector(self.handleLoginTapGesture))
@@ -165,10 +168,13 @@ class Login: UIViewController, UITextFieldDelegate {
         }
     }
     
+<<<<<<< HEAD
     @IBAction func handleShowHidePasswordTapGesture(_ sender: Any) {
         self.password.isSecureTextEntry = !self.password.isSecureTextEntry
         self.showHidePasswordButton.setTitle(self.password.isSecureTextEntry ? "Show Password" : "Hide Password", for: .normal)
     }
+=======
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
     
     /**
      * Handles a tap gesture on the "Login" button.

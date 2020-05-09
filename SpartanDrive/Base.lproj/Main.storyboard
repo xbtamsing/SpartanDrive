@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Wo-yK-Kgz">
+<<<<<<< HEAD
     <device id="retina6_1" orientation="portrait" appearance="light"/>
+=======
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -313,6 +317,7 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+<<<<<<< HEAD
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRk-Os-qbW">
                                 <rect key="frame" x="288" y="496.5" width="89" height="27"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
@@ -325,11 +330,19 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="tRk-Os-qbW" firstAttribute="bottom" secondItem="OLg-p9-hSY" secondAttribute="bottom" constant="-5" id="Dj2-0B-fTQ"/>
+=======
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
                             <constraint firstItem="pmU-i4-Ko3" firstAttribute="centerX" secondItem="jKx-XU-VB7" secondAttribute="centerX" id="R1t-ea-pHl"/>
                             <constraint firstItem="pmU-i4-Ko3" firstAttribute="centerY" secondItem="jKx-XU-VB7" secondAttribute="centerY" id="YTf-Zt-lND"/>
                             <constraint firstItem="yBq-7V-3k8" firstAttribute="top" secondItem="Cyx-Xf-nxd" secondAttribute="top" constant="469" id="a0Z-Vf-AtJ"/>
                             <constraint firstItem="yI1-jd-afS" firstAttribute="centerX" secondItem="jKx-XU-VB7" secondAttribute="centerX" id="ara-ww-Nkx"/>
+<<<<<<< HEAD
                             <constraint firstItem="tRk-Os-qbW" firstAttribute="trailing" secondItem="OLg-p9-hSY" secondAttribute="trailing" constant="-5" id="bSM-5q-AGN"/>
+=======
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
                             <constraint firstItem="yI1-jd-afS" firstAttribute="leading" secondItem="Cyx-Xf-nxd" secondAttribute="leading" constant="57" id="bcd-Qf-INO"/>
                             <constraint firstItem="pmU-i4-Ko3" firstAttribute="leading" secondItem="Cyx-Xf-nxd" secondAttribute="leading" constant="32" id="c99-ny-A7J"/>
                             <constraint firstItem="Cyx-Xf-nxd" firstAttribute="bottom" secondItem="pmU-i4-Ko3" secondAttribute="bottom" constant="333.5" id="cTA-bh-UEr"/>
@@ -350,7 +363,10 @@
                         <outlet property="googleSignInButton" destination="yBq-7V-3k8" id="nTk-uY-Des"/>
                         <outlet property="login" destination="Flt-1R-jTF" id="48z-AY-2YT"/>
                         <outlet property="password" destination="OLg-p9-hSY" id="8X3-zh-imL"/>
+<<<<<<< HEAD
                         <outlet property="showHidePasswordButton" destination="tRk-Os-qbW" id="ov3-6K-ztI"/>
+=======
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
                         <outlet property="tappableView" destination="jKx-XU-VB7" id="sKm-0c-O9O"/>
                     </connections>
                 </viewController>

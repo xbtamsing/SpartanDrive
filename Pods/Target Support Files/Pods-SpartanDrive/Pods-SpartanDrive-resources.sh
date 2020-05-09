@@ -114,7 +114,11 @@ rm -f "$RESOURCES_TO_COPY"
 if [[ -n "${WRAPPER_EXTENSION}" ]] && [ "`xcrun --find actool`" ] && [ -n "${XCASSET_FILES:-}" ]
 then
   # Find all other xcassets (this unfortunately includes those of path pods and other targets).
+<<<<<<< HEAD
   OTHER_XCASSETS=$(find "$PWD" -iname "*.xcassets" -type d)
+=======
+  OTHER_XCASSETS=$(find -L "$PWD" -iname "*.xcassets" -type d)
+>>>>>>> 2d9c4c06a28224f0baf6217d60792cca21be5408
   while read line; do
     if [[ $line != "${PODS_ROOT}*" ]]; then
       XCASSET_FILES+=("$line")
