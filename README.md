@@ -12,5 +12,4 @@ Designed with the intent of streamlining file accessibility and management for s
 
 * Hansol Kim, *Developer*
 * Brian Tamsing, *Developer*
-* Maurice Washington, *Developer*
 * Spencer Wong, *Developer*
